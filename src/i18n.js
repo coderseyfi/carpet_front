@@ -8,15 +8,15 @@ i18n
   .use(LanguageDetector) 
   .use(initReactI18next) 
   .init({
-    fallbackLng: "AZ", 
+    fallbackLng: "az", 
     // debug: true, // Konsolda debug mesajları görmək üçün
     interpolation: {
       escapeValue: false, 
     },
-    detection: {
-      order: ["localStorage", "cookie"], // Dil seçimi əvvəl localStorage sonra brauzerdən
-      caches: ["localStorage"], 
-    },
+  detection: {
+  order: ["localStorage", "cookie", "navigator"],
+  caches: ["localStorage"],
+},
     backend: {
       loadPath: "/locales/{{lng}}/translation.json", 
     },

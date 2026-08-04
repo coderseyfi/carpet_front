@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CarpetVideo from "../../../assets/videos/CarpetVideo.mp4";
-// import HeroText from "@/assets/images/hero/text.svg";
 
 export default function Hero() {
   const { t } = useTranslation();
