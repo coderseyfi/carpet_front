@@ -8,10 +8,13 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Select } from "antd";
 import { useTranslation } from "react-i18next";
 import BurgerIco from "@/assets/images/header/burger.svg";
-import { DownOutlined, CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 import arrowDown from "../../assets/images/arrow-down.svg";
+import axiosInstance from "@/api";
 
 const Navbar = () => {
+  const [collections, setCollections] = useState([]);
+
   const navigate = useNavigate();
   const location = useLocation();
   const { lang, changeLanguage } = useLanguage();
@@ -24,6 +27,19 @@ const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openAccordions, setOpenAccordions] = useState({});
+
+  const getCollections = async () => {
+    try {
+      const response = await axiosInstance.get("/collections");
+      setCollections(response.data);
+    } catch (err) {
+      console.error("Failed to fetch collections", err);
+    }
+  };
+
+  useEffect(() => {
+    getCollections();
+  }, [lang]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -85,7 +101,11 @@ const Navbar = () => {
     {
       name: t("navbar.collections"),
       path: "/collections",
-      children: [],
+      children: collections.map((collection) => ({
+        key: `collection-${collection.id}`,
+        label: collection.name,
+        path: `/collections/${collection.id}`,
+      })),
     },
     {
       name: t("navbar.learn"),
@@ -130,26 +150,52 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`navbar ${isHome && !isScroll ? "navbar-transparent" : "navbar-solid"}`}>
+      <header
+        className={`navbar ${isHome && !isScroll ? "navbar-transparent" : "navbar-solid"}`}>
         <div className="navbar-inner">
           <div className="navbar-left" onClick={() => navigate("/")}>
-            <img src={isHome && !isScroll ? LogoWhite : Logo2} alt="Logo" className="logo w-[130px] sm:w-auto" />
+            <img
+              src={isHome && !isScroll ? LogoWhite : Logo2}
+              alt="Logo"
+              className="logo w-[130px] sm:w-auto"
+            />
           </div>
 
           <nav className="navbar-right" aria-label="Primary">
-            <div className={`lg:hidden ${isMobileMenuOpen ? "is-open" : ""}`} aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMobileMenuOpen} onClick={handleMobileMenuToggle}>
-              {isMobileMenuOpen ? <CloseOutlined style={{ fontSize: "28px" }} /> : <img src={BurgerIco} alt="burger-ico" />}
+            <div
+              className={`lg:hidden ${isMobileMenuOpen ? "is-open" : ""}`}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              onClick={handleMobileMenuToggle}>
+              {isMobileMenuOpen ? (
+                <CloseOutlined style={{ fontSize: "28px" }} />
+              ) : (
+                <img src={BurgerIco} alt="burger-ico" />
+              )}
             </div>
 
-            <ul className={`desktop-menu ${isHome && !isScroll ? "menu-white" : ""}`}>
+            <ul
+              className={`desktop-menu ${isHome && !isScroll ? "menu-white" : ""}`}>
               {menu.map((item) => {
                 if (item.children && item.children.length > 0) {
                   return (
-                    <Dropdown key={item.name} menu={{ items: getDropdownItems(item.children), className: "navbar-dropdown-menu" }} trigger={["hover"]}>
+                    <Dropdown
+                      key={item.name}
+                      menu={{
+                        items: getDropdownItems(item.children),
+                        className: "navbar-dropdown-menu",
+                      }}
+                      trigger={["hover"]}>
                       <li className="has-dropdown ">
-                        <span onClick={() => item.path && navigate(item.path)}>{item.name}</span>
+                        <span onClick={() => item.path && navigate(item.path)}>
+                          {item.name}
+                        </span>
 
-                        <img src={arrowDown} alt="arrow" className={`arrow-icon ${!isTransparent ? "arrow-black" : ""}`} />
+                        <img
+                          src={arrowDown}
+                          alt="arrow"
+                          className={`arrow-icon ${!isTransparent ? "arrow-black" : ""}`}
+                        />
                       </li>
                     </Dropdown>
                   );
@@ -162,7 +208,8 @@ const Navbar = () => {
               })}
             </ul>
 
-            <div className={`hidden lg:block! lang-select ${isTransparent ? "lang-white" : ""}`}>
+            <div
+              className={`hidden lg:block! lang-select ${isTransparent ? "lang-white" : ""}`}>
               <Select
                 value={lang}
                 onChange={(value) => changeLanguage(value)}
@@ -180,10 +227,18 @@ const Navbar = () => {
       </header>
 
       {/* Overlay */}
-      <div className={`mobile-overlay ${isMobileMenuOpen ? "is-visible" : ""}`} onClick={() => setIsMobileMenuOpen(false)} aria-hidden="true" />
+      <div
+        className={`mobile-overlay ${isMobileMenuOpen ? "is-visible" : ""}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
 
       {/* Mobile Drawer */}
-      <div className={`mobile-menu ${isMobileMenuOpen ? "is-open" : ""}`} role="dialog" aria-label="Mobile menu" aria-modal="true">
+      <div
+        className={`mobile-menu ${isMobileMenuOpen ? "is-open" : ""}`}
+        role="dialog"
+        aria-label="Mobile menu"
+        aria-modal="true">
         <div className="mobile-menu-header">
           <img src={Logo2} alt="Logo" className="logo" />
         </div>
@@ -194,7 +249,9 @@ const Navbar = () => {
             const isOpen = openAccordions[item.name];
 
             return (
-              <li key={item.name} className={`mobile-menu-item ${hasChildren ? "has-children" : ""}`}>
+              <li
+                key={item.name}
+                className={`mobile-menu-item ${hasChildren ? "has-children" : ""}`}>
                 <div
                   className="mobile-menu-row"
                   onClick={() => {
@@ -204,10 +261,15 @@ const Navbar = () => {
                       navigate(item.path);
                       setIsMobileMenuOpen(false);
                     }
-                  }}
-                >
+                  }}>
                   <span>{item.name}</span>
-                  {hasChildren && <img src={arrowDown} alt="" className={`accordion-icon ${isOpen ? "rotated" : ""}`} />}
+                  {hasChildren && (
+                    <img
+                      src={arrowDown}
+                      alt=""
+                      className={`accordion-icon ${isOpen ? "rotated" : ""}`}
+                    />
+                  )}
                 </div>
 
                 {hasChildren && (
@@ -220,8 +282,7 @@ const Navbar = () => {
                             navigate(child.path);
                             setIsMobileMenuOpen(false);
                           }
-                        }}
-                      >
+                        }}>
                         {child.label}
                       </li>
                     ))}
@@ -232,7 +293,13 @@ const Navbar = () => {
           })}
         </ul>
         <div className="pl-5 pb-[50px]">
-          <Select value={lang} onChange={(value) => changeLanguage(value)} options={languageOptions} suffixIcon={false} popupClassName="navbar-lang-dropdown" />
+          <Select
+            value={lang}
+            onChange={(value) => changeLanguage(value)}
+            options={languageOptions}
+            suffixIcon={false}
+            popupClassName="navbar-lang-dropdown"
+          />
         </div>
       </div>
     </>

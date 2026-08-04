@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 export default function PageHeader({ title, breadcrumbs = [] }) {
   const { t } = useTranslation();
 
-
   const allBreadcrumbs = [
     {
       label: t("navbar.home"),
@@ -25,11 +24,16 @@ export default function PageHeader({ title, breadcrumbs = [] }) {
             return (
               <span key={index} className="flex items-center">
                 {item.path && !isLast ? (
-                  <Link to={item.path} className="text-gray-500 hover:text-black transition-colors">
+                  <Link
+                    to={item.path}
+                    state={item.state}
+                    className="text-gray-500 hover:text-black transition-colors">
                     {item.label}
                   </Link>
                 ) : (
-                  <span className={isLast ? "font-semibold text-black" : ""}>{item.label}</span>
+                  <span className={isLast ? "font-semibold text-black" : ""}>
+                    {item.label}
+                  </span>
                 )}
 
                 {!isLast && <span className="mx-2 text-gray-400">/</span>}

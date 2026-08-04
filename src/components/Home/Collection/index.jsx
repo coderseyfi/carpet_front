@@ -58,7 +58,7 @@ export default function Collection() {
             speed={1000}
             spaceBetween={20}
             slidesPerView={"auto"}
-            className="!w-full !pb-2.5 !pr-0 !mr-0"
+            className="!w-full !pb-2.5 !pr-0 !mr-0 pl-0!"
           >
             {collections?.map((item) => (
               <SwiperSlide

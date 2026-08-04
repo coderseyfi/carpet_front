@@ -110,6 +110,9 @@
   "categories": "Kateqoriyalar",
   "subcategories": "Alt kateqoriyalar",
   "carpets": "Xalçalar",
+  "carpetDetail":"Xalça detalı",
+  
+  
   "all_news": "Bütün xəbərlər",
   "news_detail": "Xəbər detalı"
 }
