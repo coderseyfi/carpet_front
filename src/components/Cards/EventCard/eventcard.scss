@@ -1,0 +1,62 @@
+@use "../../../styles/breakpoints" as *;
+
+.eventcard-section {
+  .event-images {
+    img {
+      // height: 400px;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .event-dates {
+    background-color: #020202;
+    width: 100%;
+    padding: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background-image: repeating-linear-gradient(to right, #c9c9c9 0, #c9c9c9 4px, transparent 4px, transparent 10px);
+      margin: 0 20px;
+    }
+  }
+
+  .event-text {
+    margin-top: 20px;
+
+    .card-title {
+      font-size: 30px;
+      margin-bottom: 5px;
+      font-weight: 400;
+    }
+
+    .card-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}
+
+@include down($bp-md) {
+  .eventcard-section {
+    .event-text {
+      .card-title {
+        font-size: 22px;
+      }
+      .card-subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+import React, { useEffect, useState } from "react";
+import "./news.scss";
+import PageHeader from "../../components/Cards/PageHeader";
+
+import NewsCard from "../../components/Cards/NewsCard";
+import { Row, Col, Pagination } from "antd";
+import { useNavigate } from "react-router-dom";
+import axiosInstance, { IMAGE_URL } from "@/api";
+import { useTranslation } from "react-i18next";
+
+export default function News() {
+  const [news, setNews] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
+
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const getNews = async (page = 1) => {
+    try {
+      setLoading(true);
+      const res = await axiosInstance.get("/news", {
+        params: { page },
+      });
+      setNews(res.data.data);
+      setCurrentPage(res.data.current_page);
+      setPerPage(res.data.per_page);
+      setTotal(res.data.total);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getNews(currentPage);
+  }, [currentPage]);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const mainNews = news?.[0];
+
+  return (
+    <div>
+      <PageHeader
+        title={t("navbar.news")}
+        breadcrumbs={[
+          {
+            label: t("navbar.news"),
+          },
+        ]}
+      />
+      <div className="newspage">
+        <div className="news">
+          <div className="main container">
+            <h1 className="slogan newspage-title">Populyar Xəbərlər</h1>
+            <div className="news-layout">
+              <div className="news-left w-full!">
+                <div className="news-img w-full">
+                  <img className="w-full" src={IMAGE_URL + mainNews?.base_image} alt="" />
+                </div>
+
+                <h3 className="news-title">{mainNews?.title}</h3>
+
+                <div className="news-content">
+                  <p className="category">{mainNews?.news_categories?.name}</p>
+                  <p className="date">{mainNews?.date}</p>
+                </div>
+              </div>
+
+              <div className="news-right w-full">
+                {news?.slice(0,4).map((card, index) => (
+                  <div key={card.id ?? index} onClick={() => navigate(`/news/${card.id}`)}>
+                    <NewsCard data={card} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="news-card overflow-hidden">
+              <h1 className="slogan allnews">{t("all_news")}</h1>
+              <Row gutter={[60, 30]}>
+                {news.map((card, index) => (
+                  <Col key={card.id ?? index} xs={24} sm={12} lg={12} className="card">
+                    <div onClick={() => navigate(`/news/${card.id}`)}>
+                      <NewsCard data={card} />
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+
+              {total > perPage && (
+                <div className="news-pagination mb-[10px]" style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
+                  <Pagination current={currentPage} pageSize={perPage} total={total} onChange={handlePageChange} showSizeChanger={false} />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

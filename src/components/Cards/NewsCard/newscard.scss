@@ -1,0 +1,75 @@
+@use "../../../styles/breakpoints" as *;
+
+.newscard-section {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #ABABAB;
+  margin-bottom: 20px;
+  padding: 0 20px 15px 0;
+  cursor: pointer;
+  .newscard-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 130px;
+    width: 75%;
+    .title {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: black;
+    }
+    .news-content {
+      display: flex;
+      justify-content: space-between;
+   
+      .category {
+        font-size: 18px;
+        font-weight: 500;
+        color: #1d3b78;
+      }
+      .date {
+        color: #717171;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+  .news-img {
+    width: 24%;
+    height: 130px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@include down($bp-md) {
+  .newscard-section {
+    flex-direction: column;
+    padding: 0 0 15px 0;
+    gap: 14px;
+
+    .newscard-layout {
+      width: 100%;
+      min-height: unset;
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .news-content {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+
+    .news-img {
+      width: 100%;
+      height: clamp(180px, 45vw, 260px);
+    }
+  }
+}

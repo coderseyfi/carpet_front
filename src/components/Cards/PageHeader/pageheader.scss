@@ -1,0 +1,37 @@
+@use "../../../styles/breakpoints" as *;
+
+.page-header {
+  background-color: #fff6dd;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding-top: 80px;
+
+  .breadcrumb {
+    font-size: 20px;
+    color: #6b6b6b;
+  }
+
+  .title {
+    font-size: 55px;
+    font-weight: 600;
+    font-family: "Crimson Pro", serif;
+  }
+}
+
+@include down($bp-lg) {
+  .page-header {
+    // padding: 14px 0;
+
+    .breadcrumb {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: clamp(28px, 7vw, 44px);
+      line-height: 1.1;
+    }
+  }
+}

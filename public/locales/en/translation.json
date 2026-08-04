@@ -1,0 +1,114 @@
+{
+  "navbar": {
+    "visit": "Visit",
+    "planVisit": "Plan your visit",
+    "collections": "Collections",
+    "learn": "Learn",
+    "artists": "Artists",
+    "about": "About",
+    "ourStory": "Our Story",
+    "museumTeams": "Museum Teams",
+    "news": "News",
+    "events": "Events & Exhibitions",
+    "home": "Home page"
+  },
+  "hero": {
+    "title": "Azerbaijan National Carpet Museum",
+    "getTickets": "Get Tickets",
+    "bookTitle": "BOOK YOUR TICKET TODAY!",
+    "bookDesc": "This is a demo text and will be updated later."
+  },
+  "events": {
+    "title": "What’s On"
+  },
+  "collection": {
+    "discover": "Discover",
+    "title": "Collections",
+    "text": "This section provides information about museum collections.",
+    "book": "Book your ticket"
+  },
+  "news": {
+    "title": "Latest news"
+  },
+  "latif": {
+    "title": "Latif Karimov",
+    "description": "Latif Karimov, the founder of Azerbaijani carpet studies and a distinguished scholar and carpet artist, played an exceptional role in the establishment, collection development, and growth of the Azerbaijan National Carpet Museum. It was through his initiative that this unique cultural institution was founded in Baku in 1967.",
+    "readMore": "Read more"
+  },
+  "footer": {
+    "aboutMuseum": "About Museum",
+    "events": "Events",
+    "collections": "Collections",
+    "exhibitions": "Exhibitions",
+    "research": "Research & Publications",
+    "contact": "Contact",
+    "phone": "Phone number",
+
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+
+    "baku": "Baku, Azerbaijan",
+    "shusha": "Shusha, Azerbaijan",
+
+    "bakuAddress": "Baku, Mikayil Huseynov Avenue 28, AZ1000",
+    "shushaAddress": "Shusha Branch of the Azerbaijan National Carpet Museum. Shusha city, 8 November Street.",
+
+    "terms": "Terms and Conditions",
+    "copyright": "©2026 Azerbaijan National Carpet Museum"
+  },
+  "planVisit": {
+    "pageTitle": "Plan Your Visit",
+    "breadcrumb": "Home / Plan Your Visit",
+
+    "bakuTitle": "Azerbaijan National Carpet Museum — Baku",
+    "shushaTitle": "Azerbaijan National Carpet Museum — Shusha",
+
+    "address": "28 Mikayil Huseynov Avenue, Baku, Azerbaijan",
+
+    "openNow": "Open now",
+    "viewOnMap": "View on map",
+    "getTickets": "Get Tickets",
+
+    "workingHours": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+
+    "visitTitle": "Plan your visit",
+
+    "accessTitle": "Access",
+    "accessDescription": "We aim to provide a friendly, accessible environment for all our visitors and the widest possible access to our buildings, exhibitions and collections.",
+
+    "nowLive": "Now live"
+  },
+  "ourStory": {
+    "pageTitle": "Our Story",
+    "breadcrumb": "Home / Our Story",
+
+    "historyTitle": "History of the Museum",
+    "historyText": "Contrary to popular belief, Lorem Ipsum is not simply random text...",
+
+    "missionTitle": "Our Mission",
+    "missionText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+
+    "visionTitle": "Our Vision",
+    "visionText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+
+    "roleTitle": "Our Role",
+    "roleText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+
+    "trending": "Trending"
+  },
+  "categories": "Categories",
+  "subcategories": "Subcategories",
+  "carpets": "Carpets",
+  "all_news": "All news",
+  "news_detail": "News detail"
+}

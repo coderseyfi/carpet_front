@@ -1,0 +1,90 @@
+@use "../../../styles/breakpoints" as *;
+
+.museum-home {
+  padding: 40px 0 60px 0;
+  background-color: #f6f3ee;
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .title {
+      font-size: 50px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+    .book {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 45px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+    .card{
+        cursor: pointer;
+        .img-card{
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: #FFF4D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: min(75%, 240px);
+                height: auto;
+            }
+        }
+        .content{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            h3{
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 16px;
+                color: #636363;
+            }
+        }
+    }
+  }
+}
+
+@include down($bp-lg) {
+  .museum-home {
+    .main {
+      .title {
+        font-size: clamp(28px, 7vw, 44px);
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+}
+
+@include down($bp-sm) {
+  .museum-home {
+    .main {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        .content {
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "navbar": {
+    "visit": "Ziyarət",
+    "planVisit": "Ziyarətinizi planlayın",
+    "collections": "Kolleksiyalar",
+    "learn": "Öyrən",
+    "artists": "Rəssamlar",
+    "about": "Haqqımızda",
+    "ourStory": "Tariximiz",
+    "museumTeams": "Muzey komandası",
+    "news": "Xəbərlər",
+    "events": "Tədbirlər və Sərgilər",
+    "home": "Ana səhifə"
+  },
+  "hero": {
+    "title": "Azərbaycan Milli Xalça Muzeyi",
+    "getTickets": "Bilet al",
+    "bookTitle": "BU GÜN BİLETİNİZİ ALIN!",
+    "bookDesc": "Bu mətn sadəcə demo mətndir və gələcəkdə dəyişdiriləcək."
+  },
+  "events": {
+    "title": "Nələr Baş verir"
+  },
+  "collection": {
+    "discover": "Kolleksiyaları kəşf et",
+    "title": "Kolleksiyalar",
+
+    "text": "Bu bölmə muzey kolleksiyaları haqqında məlumat verir.",
+    "book": "Bilet al"
+  },
+  "news": {
+    "title": "Son xəbərlər"
+  },
+  "latif": {
+    "title": "Lətif Kərimov",
+    "description": "Azərbaycan Milli Xalça Muzeyinin yaradılması, kolleksiyalarının toplanması, eləcə də inkişafında Azərbaycan xalçaçılıq elminin banisi, görkəmli alim, xalçaçı-rəssam Lətif Kərimovun müstəsna xidmətləri olmuşdur. Məhz onun irəli sürdüyü təşəbbüs ilə 1967-ci ildə Bakıda unikal mədəniyyət ocağının – Azərbaycan Milli Xalça Muzeyinin əsası qoyulmuşdur.",
+    "readMore": "Ətraflı oxu"
+  },
+  "footer": {
+    "aboutMuseum": "Muzey haqqında",
+    "events": "Tədbirlər",
+    "collections": "Kolleksiyalar",
+    "exhibitions": "Sərgilər",
+    "research": "Tədqiqat və Nəşrlər",
+    "contact": "Əlaqə",
+    "phone": "Əlaqə nömrəsi",
+
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+
+    "baku": "Bakı, Azərbaycan",
+    "shusha": "Şuşa, Azərbaycan",
+
+    "bakuAddress": "Bakı ş., Mikayıl Useynov pr-ti, 28, AZ1000",
+    "shushaAddress": "Azərbaycan Milli Xalça Muzeyinin Şuşa filialı. Şuşa ş., 8 noyabr küç.",
+
+    "terms": "İstifadə şərtləri",
+    "copyright": "©2026 Azərbaycan Milli Xalça Muzeyi"
+  },
+  "planVisit": {
+    "pageTitle": "Səfərinizi planlaşdırın",
+    "breadcrumb": "Səfərinizi planlaşdırın",
+
+    "bakuTitle": "Azərbaycan Milli Xalça Muzeyi — Bakı",
+    "shushaTitle": "Azərbaycan Milli Xalça Muzeyi — Şuşa",
+
+    "address": "Mikayıl Hüseynov prospekti 28, Bakı, Azərbaycan",
+
+    "openNow": "Hazırda açıqdır",
+    "viewOnMap": "Xəritədə göstər",
+    "getTickets": "Bilet al",
+
+    "workingHours": {
+      "sunday": "Bazar",
+      "monday": "Bazar ertəsi",
+      "tuesday": "Çərşənbə axşamı",
+      "wednesday": "Çərşənbə",
+      "thursday": "Cümə axşamı",
+      "friday": "Cümə",
+      "saturday": "Şənbə"
+    },
+
+    "visitTitle": "Səfərinizi planlaşdırın",
+
+    "accessTitle": "Əlçatanlıq",
+    "accessDescription": "Bütün ziyarətçilərimiz üçün rahat və əlçatan mühit yaratmağa, həmçinin binalarımıza, sərgilərimizə və kolleksiyalarımıza mümkün olan ən geniş çıxışı təmin etməyə çalışırıq.",
+
+    "nowLive": "Hazırda davam edir"
+  },
+  "ourStory": {
+    "pageTitle": "Hekayəmiz",
+    "breadcrumb": "Ana səhifə / Hekayəmiz",
+
+    "historyTitle": "Muzeyin tarixi",
+    "historyText": "Əksər insanların düşündüyünün əksinə olaraq, Lorem Ipsum sadəcə təsadüfi mətn deyil. Onun kökləri eramızdan əvvəl 45-ci ilə aid klassik Latın ədəbiyyatına dayanır və bu səbəbdən 2000 ildən artıq tarixə malikdir.",
+
+    "missionTitle": "Missiyamız",
+    "missionText": "Bizim missiyamız milli xalçaçılıq irsini qorumaq, inkişaf etdirmək və gələcək nəsillərə çatdırmaqdır.",
+
+    "visionTitle": "Vizyonumuz",
+    "visionText": "Məqsədimiz Azərbaycan xalça sənətini beynəlxalq səviyyədə tanıtmaq və mədəni irsimizin dünyada daha geniş tanınmasına töhfə verməkdir.",
+
+    "roleTitle": "Rolumuz",
+    "roleText": "Muzey olaraq xalça sənətinin araşdırılması, qorunması və nümayiş etdirilməsi istiqamətində fəaliyyət göstəririk.",
+
+    "trending": "Trenddə olanlar"
+  },
+  "categories": "Kateqoriyalar",
+  "subcategories": "Alt kateqoriyalar",
+  "carpets": "Xalçalar",
+  "all_news": "Bütün xəbərlər",
+  "news_detail": "Xəbər detalı"
+}

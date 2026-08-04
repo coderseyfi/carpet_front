@@ -1,0 +1,87 @@
+@use "../../styles/breakpoints" as *;
+
+.exhibitions-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .detail {
+    display: flex;
+    gap: 45px;
+    margin: 50px 0 50px 0;
+    .img {
+      img {
+        width: min(813px, 100%);
+        height: clamp(240px, 45vw, 600px);
+        object-fit: cover;
+      }
+    }
+    .title {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    .prag {
+      font-size: 18px;
+      color: #1a1a1a;
+      width: 100%;
+      max-width: 70ch;
+    }
+
+    .event-info {
+      margin-top: 90px;
+      .event-info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        .event-info-text {
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+      .ticket {
+        padding: 10px 20px;
+        border: 1px solid black;
+        background-color: white;
+        margin-top: 30px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
+  .cards-container {
+    margin: 130px 0 160px 0;
+    .card {
+      cursor: pointer;
+    }
+    .title {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include down($bp-lg) {
+  .exhibitions-detail {
+    .detail {
+      flex-direction: column;
+      gap: 20px;
+      margin: 24px 0 40px 0;
+
+      .title {
+        font-size: clamp(28px, 7vw, 44px);
+      }
+
+      .event-info {
+        margin-top: 24px;
+      }
+    }
+
+    .cards-container {
+      margin: 60px 0 80px 0;
+      .title {
+        font-size: clamp(26px, 7vw, 44px);
+      }
+    }
+  }
+}

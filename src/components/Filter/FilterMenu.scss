@@ -1,0 +1,226 @@
+.filterMenu {
+  background: #f2f2f2;
+  padding: 16px;
+  border-radius: 20px;
+  // position: sticky;
+  // top: 20px;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  .menuName {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 13px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .categoryButton {
+    display: flex;
+    gap: 15px;
+  }
+
+  .otherCategory {
+    display: flex;
+    gap: 18px;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .capacity {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdownContentWrapper {
+    margin-top: 13px;
+    background: transparent;
+    border-top: 1px solid black;
+    padding-top: 20px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+
+    /* slide-down animasiyası */
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .dropdownToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: rgba(51, 51, 51, 1);
+    font-size: 18px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+
+    &.active {
+      background-color: black;
+      color: white;
+    }
+    .dropdownIconWrapper {
+      transition: transform 0.4s ease;
+      transform-origin: center;
+      margin-left: 20px;
+      .anticon {
+        width: 15px;
+      }
+    }
+
+    .dropdownIconWrapper.open {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .searchButton {
+    width: 100px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 110, 253, 1),
+      rgba(218, 18, 0, 1)
+    );
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  .dropdownContent {
+    .dropdownSearch {
+      margin-bottom: 10px;
+      width: 210px;
+      height: 40px;
+      border-radius: 12px;
+    }
+    .searchIcon {
+      font-size: 16px !important;
+      color: rgba(130, 130, 130, 1);
+      height: 16px;
+      width: 16px;
+      margin-right: 10px;
+    }
+
+    .tagList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tagBtn {
+      height: 38px;
+      background: transparent;
+      border: 1px solid rgba(189, 189, 189, 1);
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+
+      &.selectedTag {
+        background: black;
+        color: white;
+        border-color: black;
+      }
+    }
+
+    .noResults {
+      color: #999;
+      font-size: 18px;
+    }
+  }
+
+  /* 3. Keyframes */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .availabilityButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .availabilityBtn {
+    transition: all 0.3s ease;
+    color: #fff;
+    height: 38px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+ :where(.css-dev-only-do-not-override-ut69n1).ant-btn-variant-outlined:not(
+    :disabled
+  ):not(.ant-btn-disabled):hover {
+  background-color: black !important;
+  color: white !important;
+  border-color: black !important; 
+}
+}
+
+
+// .availabilityOptions {
+//   display: flex;
+//   gap: 12px;
+//   margin-top: 12px;
+// }
+
+// .availabilityItem {
+//   padding: 10px 16px;
+//   border-radius: 6px;
+//   color: #fff;
+//   font-weight: 500;
+//   cursor: pointer;
+//   user-select: none;
+//   transition: all 0.2s;
+// }
+
+// .available {
+//   background-color: #52c41a;
+// }
+
+// .reserved {
+//   background-color: #faad14;
+// }
+
+// .booked {
+//   background-color: #1890ff;
+// }
+
+// .selectedAvailability {
+//   box-shadow: 0 0 0 2px #00000033;
+//   border: 2px solid #fff;
+// }

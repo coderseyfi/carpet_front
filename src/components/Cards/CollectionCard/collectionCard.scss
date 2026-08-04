@@ -1,0 +1,62 @@
+.collectionCard {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex: 0 0 100%;
+  
+
+  .collection-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .collection-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 1.05;
+  }
+}
+
+@media (min-width: 200px) {
+  .collection-image {
+    height: 450px;
+  }
+}
+/* SM — 2 cards */
+@media (min-width: 576px) {
+  .collectionCard {
+    flex: 0 0 calc(50% - 15px);
+  }
+  .collection-image {
+    height: 450px;
+  }
+}
+
+/* LG — 3 cards */
+@media (min-width: 992px) {
+  .collectionCard {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+  .collection-image {
+    height: 350px;
+  }
+}
+
+/* XL — 4 cards */
+@media (min-width: 1200px) {
+  .collectionCard {
+    flex: 0 0 calc(25% - 22.5px);
+  }
+  .collection-image {
+    height: 400px;
+  }
+}
