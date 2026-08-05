@@ -1,5 +1,6 @@
 import axiosInstance, { IMAGE_URL } from "@/api";
 import PageHeader from "@/components/Cards/PageHeader";
+import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useParams } from "react-router-dom";
@@ -7,6 +8,8 @@ import { useLocation, useParams } from "react-router-dom";
 const CarpetDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
+  const { lang } = useLanguage();
+
   const [carpet, setCarpet] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const location = useLocation();
@@ -28,7 +31,7 @@ const CarpetDetail = () => {
 
   useEffect(() => {
     if (id) getCarpet();
-  }, [id]);
+  }, [id, lang]);
 
   return (
     <div className="min-h-screen">

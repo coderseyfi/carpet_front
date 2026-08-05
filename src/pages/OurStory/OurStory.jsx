@@ -10,11 +10,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import axiosInstance, { IMAGE_URL } from "@/api";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function OurStory() {
   const [news, setNews] = useState([]);
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   const getNews = async () => {
     const res = await axiosInstance.get("/news");
@@ -23,7 +24,7 @@ export default function OurStory() {
 
   useEffect(() => {
     getNews();
-  }, []);
+  }, [lang]);
 
   const mainNews = news?.[0];
 
@@ -57,7 +58,11 @@ export default function OurStory() {
       />
       <div className="our-story">
         <div className="hero-img">
-          <img src={OurStoryHeroImg} alt="" className="w-full our-story-hero-img" />
+          <img
+            src={OurStoryHeroImg}
+            alt=""
+            className="w-full our-story-hero-img"
+          />
         </div>
 
         <div className="main container">
@@ -68,7 +73,11 @@ export default function OurStory() {
           </div>
 
           <div className="video">
-            <img src={OurStoryVideoCoverImg} alt="" className="our-story-main-img" />
+            <img
+              src={OurStoryVideoCoverImg}
+              alt=""
+              className="our-story-main-img"
+            />
 
             <img className="play-btn" src={PlayBtn} alt="" />
           </div>
@@ -89,13 +98,19 @@ export default function OurStory() {
               <Link className="w-full" to={`/news/${mainNews?.id}`}>
                 <div className="news-left w-full!">
                   <div className="news-img w-full">
-                    <img className="w-full" src={IMAGE_URL + mainNews?.base_image} alt="" />
+                    <img
+                      className="w-full"
+                      src={IMAGE_URL + mainNews?.base_image}
+                      alt=""
+                    />
                   </div>
 
                   <h3 className="news-title">{mainNews?.title}</h3>
 
                   <div className="news-content">
-                    <p className="category">{mainNews?.news_categories?.name}</p>
+                    <p className="category">
+                      {mainNews?.news_categories?.name}
+                    </p>
 
                     <p className="date">{mainNews?.date}</p>
                   </div>

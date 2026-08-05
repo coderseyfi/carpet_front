@@ -7,6 +7,7 @@ import { Row, Col, Pagination } from "antd";
 import { useNavigate } from "react-router-dom";
 import axiosInstance, { IMAGE_URL } from "@/api";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function News() {
   const [news, setNews] = useState([]);
@@ -14,7 +15,7 @@ export default function News() {
   const [perPage, setPerPage] = useState(10);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
-
+  const { lang } = useLanguage();
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ export default function News() {
 
   useEffect(() => {
     getNews(currentPage);
-  }, [currentPage]);
+  }, [currentPage, lang]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -61,7 +62,11 @@ export default function News() {
             <div className="news-layout">
               <div className="news-left w-full!">
                 <div className="news-img w-full">
-                  <img className="w-full" src={IMAGE_URL + mainNews?.base_image} alt="" />
+                  <img
+                    className="w-full"
+                    src={IMAGE_URL + mainNews?.base_image}
+                    alt=""
+                  />
                 </div>
 
                 <h3 className="news-title">{mainNews?.title}</h3>
@@ -73,8 +78,10 @@ export default function News() {
               </div>
 
               <div className="news-right w-full">
-                {news?.slice(0,4).map((card, index) => (
-                  <div key={card.id ?? index} onClick={() => navigate(`/news/${card.id}`)}>
+                {news?.slice(0, 4).map((card, index) => (
+                  <div
+                    key={card.id ?? index}
+                    onClick={() => navigate(`/news/${card.id}`)}>
                     <NewsCard data={card} />
                   </div>
                 ))}
@@ -85,7 +92,12 @@ export default function News() {
               <h1 className="slogan allnews">{t("all_news")}</h1>
               <Row gutter={[60, 30]}>
                 {news.map((card, index) => (
-                  <Col key={card.id ?? index} xs={24} sm={12} lg={12} className="card">
+                  <Col
+                    key={card.id ?? index}
+                    xs={24}
+                    sm={12}
+                    lg={12}
+                    className="card">
                     <div onClick={() => navigate(`/news/${card.id}`)}>
                       <NewsCard data={card} />
                     </div>
@@ -94,8 +106,20 @@ export default function News() {
               </Row>
 
               {total > perPage && (
-                <div className="news-pagination mb-[10px]" style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
-                  <Pagination current={currentPage} pageSize={perPage} total={total} onChange={handlePageChange} showSizeChanger={false} />
+                <div
+                  className="news-pagination mb-[10px]"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: 40,
+                  }}>
+                  <Pagination
+                    current={currentPage}
+                    pageSize={perPage}
+                    total={total}
+                    onChange={handlePageChange}
+                    showSizeChanger={false}
+                  />
                 </div>
               )}
             </div>

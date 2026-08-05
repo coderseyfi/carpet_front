@@ -5,10 +5,13 @@ import axiosInstance, { IMAGE_URL } from "@/api";
 import CarpetDetailImg from "@/assets/images/collections/collection-detail.png";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CollectionDetail() {
   const { t } = useTranslation();
   const { id } = useParams();
+  const { lang } = useLanguage();
+
   const subcategoryRef = useRef(null);
   const [collectionDetail, setCollectionDetail] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
@@ -45,7 +48,7 @@ export default function CollectionDetail() {
 
   useEffect(() => {
     getCollectionDetail();
-  }, [id]);
+  }, [id, lang]);
 
   return (
     <div className="min-h-screen bg-gray-100">

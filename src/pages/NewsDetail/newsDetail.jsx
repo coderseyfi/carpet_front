@@ -1,18 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./newsDetail.scss";
-import { Row, Col } from "antd";
-import News1 from "../../assets/images/news4.svg";
-import News2 from "../../assets/images/news5.svg";
-import News3 from "../../assets/images/news6.svg";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../components/Cards/PageHeader";
-import NewsDetail1 from "../../assets/images/newsdetail.svg";
 import axiosInstance, { IMAGE_URL } from "@/api";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 export default function NewsDetail() {
@@ -29,18 +23,6 @@ export default function NewsDetail() {
   useEffect(() => {
     getNewsDetail();
   }, [id, lang]);
-
-  const images = [
-    {
-      image: News1,
-    },
-    {
-      image: News2,
-    },
-    {
-      image: News3,
-    },
-  ];
 
   const text = newsDetail?.text;
 
@@ -87,8 +69,7 @@ export default function NewsDetail() {
                 delay: 3000,
                 disableOnInteraction: false,
               }}
-              grabCursor={true}
-            >
+              grabCursor={true}>
               {newsDetail?.images?.map((item, index) => (
                 <SwiperSlide key={index}>
                   <img
