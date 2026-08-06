@@ -9,6 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import parse from "html-react-parser";
+
 export default function NewsDetail() {
   const { t } = useTranslation();
   const { id } = useParams();
@@ -53,7 +55,7 @@ export default function NewsDetail() {
           />
           <div className="news-detail-content text-justify md:text-start">
             <p>
-              {firstPart}
+              {firstPart && parse(firstPart)}
               {secondPart && "..."}
             </p>
           </div>
@@ -85,9 +87,7 @@ export default function NewsDetail() {
               ))}
             </Swiper>
           </div>
-          <div className="news-detail-content text-justify md:text-start">
-            <p>{secondPart && secondPart}</p>
-          </div>
+          <div>{secondPart && parse(secondPart)}</div>
         </div>
       </div>
     </div>
