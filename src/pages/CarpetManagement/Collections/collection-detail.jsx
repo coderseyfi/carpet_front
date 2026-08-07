@@ -53,10 +53,10 @@ export default function CollectionDetail() {
   return (
     <div className="min-h-screen bg-gray-100">
       <PageHeader
-        title={t("categories")}
+        title={collectionDetail?.name}
         breadcrumbs={[
           { label: t("navbar.collections"), path: "/collections" },
-          { label: t("categories") },
+          // { label: t("categories") },
         ]}
       />
 
@@ -95,7 +95,7 @@ export default function CollectionDetail() {
                 onClick={() => getSubcategories(category.id)}
                 className={`cursor-pointer group border transition-all duration-300 ${selectedCategoryId === category.id ? "border-[#7D2829]" : "border-transparent"}`}>
                 {/* Image area */}
-                <div className="overflow-hidden mb-0 aspect-3/4 flex items-center justify-center">
+                <div className="overflow-hidden bg-white mb-0 aspect-3/4 flex items-center justify-center">
                   <img
                     src={
                       category.image
@@ -103,7 +103,7 @@ export default function CollectionDetail() {
                         : categoryCarpet
                     }
                     alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
@@ -138,7 +138,7 @@ export default function CollectionDetail() {
                   to={`/carpets/${subcategory.id}`}
                   state={{ collectionId: id, subcategoryId: subcategory.id }}
                   className="cursor-pointer group block">
-                  <div className="overflow-hidden mb-0 aspect-3/4 flex items-center justify-center">
+                  <div className="overflow-hidden bg-white mb-0 aspect-3/4 flex items-center justify-center">
                     <img
                       src={
                         subcategory.image
@@ -146,12 +146,12 @@ export default function CollectionDetail() {
                           : categoryCarpet
                       }
                       alt={subcategory.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 
                   <div className="bg-[#FFF6DD] px-5 py-5">
-                    <h3 className="text-[28px] font-normal text-[#000000]">
+                    <h3 className="text-[22px] font-normal text-[#000000]">
                       {subcategory.name}
                     </h3>
 

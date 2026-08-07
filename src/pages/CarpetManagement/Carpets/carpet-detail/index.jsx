@@ -39,10 +39,10 @@ const CarpetDetail = () => {
         title={t("carpets")}
         breadcrumbs={[
           { label: t("navbar.collections"), path: "/collections" },
-          {
-            label: t("categories"),
-            path: collectionId ? `/collections/${collectionId}` : undefined,
-          },
+          // {
+          //   label: t("categories"),
+          //   path: collectionId ? `/collections/${collectionId}` : undefined,
+          // },
           {
             label: t("carpets"),
             path: subcategoryId ? `/carpets/${subcategoryId}` : undefined,

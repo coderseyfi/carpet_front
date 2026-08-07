@@ -52,12 +52,12 @@ export default function Collections() {
                 <img
                   src={IMAGE_URL + collection.base_image}
                   alt={collection.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               <div className="bg-[#FFF6DD] px-5 py-5">
-                <h3 className="text-[28px] font-normal text-[#000000]">
+                <h3 className="text-[22px] font-normal text-[#000000]">
                   {collection.name}
                 </h3>
                 <p className="text-[20px] text-[#797979] mt-0.5">
