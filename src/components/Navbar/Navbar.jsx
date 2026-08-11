@@ -12,6 +12,10 @@ import { CloseOutlined } from "@ant-design/icons";
 import arrowDown from "../../assets/images/arrow-down.svg";
 import axiosInstance from "@/api";
 
+import LogoRU from "@/assets/images/header/logo_ru.svg";
+import LogoAZ from "@/assets/images/header/logo_az.svg";
+import LogoEn from "@/assets/images/header/logo_en.svg";
+
 const Navbar = () => {
   const [collections, setCollections] = useState([]);
 
@@ -27,6 +31,15 @@ const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openAccordions, setOpenAccordions] = useState({});
+
+  // Logo komponentlərini dilə görə map edirik
+  const logoByLang = {
+    az: LogoAZ,
+    en: LogoEn,
+    ru: LogoRU,
+  };
+
+  const LangLogo = logoByLang[lang] || LogoEn;
 
   const getCollections = async () => {
     try {
@@ -155,9 +168,9 @@ const Navbar = () => {
         <div className="navbar-inner">
           <div className="navbar-left" onClick={() => navigate("/")}>
             <img
-              src={isHome && !isScroll ? LogoWhite : Logo2}
+              src={LangLogo}
               alt="Logo"
-              className="logo w-[130px] sm:w-auto"
+              className={`logo w-[130px] sm:w-auto ${isTransparent ? "logo-white" : ""}`}
             />
           </div>
 
@@ -240,7 +253,7 @@ const Navbar = () => {
         aria-label="Mobile menu"
         aria-modal="true">
         <div className="mobile-menu-header">
-          <img src={Logo2} alt="Logo" className="logo" />
+          <img src={LangLogo} alt="Logo" className="logo" />
         </div>
 
         <ul>
