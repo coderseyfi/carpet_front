@@ -152,7 +152,7 @@ const Navbar = () => {
     },
     {
       name: t("navbar.events"),
-      path: "/exhibitions",
+      path: "/events",
       children: [],
     },
   ];

@@ -1,62 +1,75 @@
 @use "../../../styles/breakpoints" as *;
 
-.eventcard-section {
-  .event-images {
-    img {
-      // height: 400px;
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-  .event-dates {
-    background-color: #020202;
-    width: 100%;
-    padding: 12px;
-    color: white;
+.newscard-section {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #ABABAB;
+  margin-bottom: 20px;
+  padding: 0 20px 15px 0;
+  cursor: pointer;
+  .newscard-layout {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    font-size: 18px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    .line {
-      flex: 1;
-      height: 1px;
-      background-image: repeating-linear-gradient(to right, #c9c9c9 0, #c9c9c9 4px, transparent 4px, transparent 10px);
-      margin: 0 20px;
+    min-height: 130px;
+    width: 75%;
+    .title {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: black;
+    }
+    .news-content {
+      display: flex;
+      justify-content: space-between;
+   
+      .category {
+        font-size: 18px;
+        font-weight: 500;
+        color: #1d3b78;
+      }
+      .date {
+        color: #717171;
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
   }
-
-  .event-text {
-    margin-top: 20px;
-
-    .card-title {
-      font-size: 30px;
-      margin-bottom: 5px;
-      font-weight: 400;
-    }
-
-    .card-subtitle {
-      font-size: 20px;
-      font-weight: 400;
+  .news-img {
+    width: 24%;
+    height: 130px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
 
 @include down($bp-md) {
-  .eventcard-section {
-    .event-text {
-      .card-title {
-        font-size: 22px;
+  .newscard-section {
+    flex-direction: column;
+    padding: 0 0 15px 0;
+    gap: 14px;
+
+    .newscard-layout {
+      width: 100%;
+      min-height: unset;
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 10px;
       }
-      .card-subtitle {
-        font-size: 16px;
+
+      .news-content {
+        flex-wrap: wrap;
+        gap: 10px;
       }
+    }
+
+    .news-img {
+      width: 100%;
+      height: clamp(180px, 45vw, 260px);
     }
   }
 }

@@ -1,0 +1,28 @@
+.newspage {
+  margin-top: 40px;
+}
+
+.allnews {
+  margin-top: 80px;
+}
+
+.ant-pagination {
+  .ant-pagination-item {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    a {
+      color: #000;
+    }
+  }
+
+  .ant-pagination-item-active {
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+
+    a {
+      color: #000 !important;
+    }
+  }
+}

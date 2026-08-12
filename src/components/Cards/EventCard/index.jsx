@@ -1,29 +1,27 @@
 import React from "react";
-import "./eventcard.scss";
+import "./eventCard.scss";
 import { IMAGE_URL } from "@/api";
+import { Link } from "react-router-dom";
 
-const HeroSection = ({ event }) => {
+const EventCard = ({ data }) => {
   return (
-    <div className="eventcard-section w-fullx] h-full">
-      <div className="cursor-pointer">
-        <div className="event-img-date">
-          <div className="event-dates">
-            <span>{event?.start_date}</span>
-            <span className="line"></span>
-            <span>{event?.end_date}</span>
-          </div>
+    <Link>
+      <div className="newscard-section">
+        <div className="newscard-layout">
+          <h3 className="title">{data?.title}</h3>
 
-          <div className="event-images  ">
-            <img className="max-h-[400px]" src={IMAGE_URL + event?.images[0]?.image_path} alt="" />
+          <div className="news-content">
+            <p className="category">{data?.news_categories?.name}</p>
+            <p className="date">{data?.date}</p>
           </div>
         </div>
-        <div className="event-text">
-          <p className="card-title">{event?.title}</p>
-          <p className="card-subtitle">{event?.description}</p>
+
+        <div className="news-img">
+          <img src={IMAGE_URL + data?.base_image} alt="" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
-export default HeroSection;
+export default EventCard;
