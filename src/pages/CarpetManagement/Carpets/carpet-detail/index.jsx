@@ -36,7 +36,7 @@ const CarpetDetail = () => {
   return (
     <div className="min-h-screen">
       <PageHeader
-        title={t("carpets")}
+        title={carpet?.name}
         breadcrumbs={[
           { label: t("navbar.collections"), path: "/collections" },
           // {
@@ -48,16 +48,16 @@ const CarpetDetail = () => {
             path: subcategoryId ? `/carpets/${subcategoryId}` : undefined,
             state: { collectionId },
           },
-          { label: t("carpetDetail") },
+          { label: carpet?.name },
         ]}
       />
 
       <div className="max-w-[1700px] mx-auto py-[40px] px-5">
         {carpet && (
           <>
-            <h2 className="font-bold text-[45px] text-black mb-9">
+            {/* <h2 className="font-bold text-[45px] text-black mb-9">
               {carpet.name}
-            </h2>
+            </h2> */}
 
             <div className="flex gap-8 items-start">
               {/* Left */}

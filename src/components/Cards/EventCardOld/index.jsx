@@ -2,7 +2,7 @@ import React from "react";
 import "./eventcard.scss";
 import { IMAGE_URL } from "@/api";
 
-const HeroSection = ({ event }) => {
+const EventCardOld = ({ event }) => {
   return (
     <div className="eventcard-section w-fullx] h-full">
       <div className="cursor-pointer">
@@ -14,7 +14,11 @@ const HeroSection = ({ event }) => {
           </div>
 
           <div className="event-images  ">
-            <img className="max-h-[400px]" src={IMAGE_URL + event?.images[0]?.image_path} alt="" />
+            <img
+              className="max-h-[400px]"
+              src={IMAGE_URL + event?.images[0]?.image_path}
+              alt=""
+            />
           </div>
         </div>
         <div className="event-text">
@@ -26,4 +30,4 @@ const HeroSection = ({ event }) => {
   );
 };
 
-export default HeroSection;
+export default EventCardOld;

@@ -17,7 +17,7 @@ export default function PageHeader({ title, breadcrumbs = [] }) {
   return (
     <div className="page-header">
       <div className="container">
-        <div className="breadcrumb flex items-center flex-wrap text-sm mb-2.5">
+        <div className="breadcrumb flex items-center flex-wrap text-sm mb-0">
           {allBreadcrumbs.map((item, index) => {
             const isLast = index === allBreadcrumbs.length - 1;
 
@@ -31,18 +31,18 @@ export default function PageHeader({ title, breadcrumbs = [] }) {
                     {item.label}
                   </Link>
                 ) : (
-                  <span className={isLast ? "font-semibold text-black" : ""}>
+                  <span className={isLast ? "text-black" : ""}>
                     {item.label}
                   </span>
                 )}
 
-                {!isLast && <span className="mx-2 text-gray-400">/</span>}
+                {!isLast && <span className="mx-[2px] text-gray-400">/</span>}
               </span>
             );
           })}
         </div>
 
-        <h1 className="title">{title}</h1>
+        <h1 className="title leading-[70px]">{title}</h1>
       </div>
     </div>
   );

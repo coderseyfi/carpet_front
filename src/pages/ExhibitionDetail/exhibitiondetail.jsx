@@ -2,14 +2,15 @@ import React, { useState, useRef, useEffect } from "react";
 import "./exhibitiondetail.scss";
 import { Link, useParams } from "react-router-dom";
 import PageHeader from "../../components/Cards/PageHeader";
-import location from "../../assets/images/location.svg";
-import calendar from "../../assets/images/calendar.svg";
-import ticket from "../../assets/images/ticket.svg";
-import EventCard from "../../components/Cards/EventCard";
+// import location from "../../assets/images/location.svg";
+// import calendar from "../../assets/images/calendar.svg";
+// import ticket from "../../assets/images/ticket.svg";
 import axiosInstance, { IMAGE_URL } from "@/api";
 import { useEvents } from "@/context/EventContext";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/context/LanguageContext";
+import EventCardOld from "@/components/Cards/EventCardOld";
+import parse from "html-react-parser";
 
 export default function NewsDetail() {
   const { lang } = useLanguage();
@@ -42,9 +43,13 @@ export default function NewsDetail() {
         <div className="main container">
           <div className="detail">
             <div className="img">
-              <img src={IMAGE_URL + eventDetail?.images[0]?.image_path} alt="" />
+              <img
+                src={IMAGE_URL + eventDetail?.images[0]?.image_path}
+                alt=""
+              />
             </div>
-            <div>
+
+            {/* <div>
               <p className="title">{eventDetail?.title}</p>
               <p className="prag">{eventDetail?.description}</p>
               <div className="event-info">
@@ -66,7 +71,11 @@ export default function NewsDetail() {
                 </div>
                 <button className="ticket">{t("hero.getTickets")}</button>
               </div>
-            </div>
+            </div> */}
+          </div>
+
+          <div className="text-center">
+            <p>{parse(eventDetail?.text)}</p>
           </div>
           <div className="cards-container">
             {/* <p className="title">Now live</p> */}
@@ -74,7 +83,7 @@ export default function NewsDetail() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {events?.slice(0, 3).map((card) => (
                   <Link key={card.id} to={`/exhibitions/${card.id}`}>
-                    <EventCard event={card} />
+                    <EventCardOld event={card} />
                   </Link>
                 ))}
               </div>

@@ -1,7 +1,7 @@
 {
   "navbar": {
     "visit": "Ziyarət",
-    "planVisit": "Ziyarətinizi planlayın",
+    "planVisit": "Ziyarətinizi planlaşdırın",
     "collections": "Kolleksiyalar",
     "learn": "Öyrən",
     "artists": "Rəssamlar",
@@ -19,14 +19,14 @@
     "bookDesc": "Bu mətn sadəcə demo mətndir və gələcəkdə dəyişdiriləcək."
   },
   "events": {
-    "title": "Nələr Baş verir"
+    "title": "Tədbirlər"
   },
   "collection": {
     "discover": "Kolleksiyaları kəşf et",
     "title": "Kolleksiyalar",
 
     "text": "Bu bölmə muzey kolleksiyaları haqqında məlumat verir.",
-    "book": "Bilet al"
+    "book": "Daha çox"
   },
   "news": {
     "title": "Son xəbərlər"
@@ -43,7 +43,7 @@
     "exhibitions": "Sərgilər",
     "research": "Tədqiqat və Nəşrlər",
     "contact": "Əlaqə",
-    "phone": "Əlaqə nömrəsi",
+    "phone": "Əlaqə",
 
     "instagram": "Instagram",
     "youtube": "YouTube",
@@ -53,8 +53,8 @@
     "baku": "Bakı, Azərbaycan",
     "shusha": "Şuşa, Azərbaycan",
 
-    "bakuAddress": "Bakı ş., Mikayıl Useynov pr-ti, 28, AZ1000",
-    "shushaAddress": "Azərbaycan Milli Xalça Muzeyinin Şuşa filialı. Şuşa ş., 8 noyabr küç.",
+    "bakuAddress": "Mikayıl Useynov prospekti, 28, AZ1000",
+    "shushaAddress": "Azərbaycan Milli Xalça Muzeyinin Şuşa filialı. 8 noyabr küç.",
 
     "terms": "İstifadə şərtləri",
     "copyright": "©2026 Azərbaycan Milli Xalça Muzeyi"

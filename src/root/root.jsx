@@ -16,8 +16,6 @@ import CarpetDetail from "@/pages/CarpetManagement/Carpets/carpet-detail";
 import TeamDetail from "@/pages/Teams/Teams-detail";
 import Artists from "@/pages/Artists";
 import ArtistDetail from "@/pages/Artists/Artists-detail";
-import EventsDetail from "@/pages/EventDetail/eventsDetail";
-import Events from "@/pages/Events/events";
 
 const Root = () => {
   return (
@@ -25,11 +23,11 @@ const Root = () => {
       <Routes>
         <Route path={"/"} element={<MainLayout />}>
           <Route path={"/"} element={<Home />} />
-          {/* <Route path={"/exhibitions"} element={<Exhibitions />} />
-          <Route path="/exhibitions/:id" element={<ExhibitionDetail />} /> */}
+          <Route path={"/exhibitions"} element={<Exhibitions />} />
+          <Route path="/exhibitions/:id" element={<ExhibitionDetail />} />
 
-          <Route path={"/events"} element={<Events />} />
-          <Route path="/events/:id" element={<EventsDetail />} />
+          {/* <Route path={"/events"} element={<Events />} />
+          <Route path="/events/:id" element={<EventsDetail />} /> */}
 
           <Route path={"/news"} element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />

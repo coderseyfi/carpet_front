@@ -103,7 +103,7 @@ export default function CollectionDetail() {
                         : categoryCarpet
                     }
                     alt={category.name}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="w-[60%] h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
@@ -146,7 +146,7 @@ export default function CollectionDetail() {
                           : categoryCarpet
                       }
                       alt={subcategory.name}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      className="w-[60%] h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
 

@@ -56,7 +56,7 @@ const Carpets = () => {
                   <img
                     src={IMAGE_URL + carpet?.images[0]?.image}
                     alt={carpet.name}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="w-[60%] h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
