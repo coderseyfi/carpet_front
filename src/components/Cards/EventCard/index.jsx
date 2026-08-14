@@ -3,6 +3,8 @@ import "./eventCard.scss";
 import { IMAGE_URL } from "@/api";
 import { Link } from "react-router-dom";
 
+
+
 const EventCard = ({ data }) => {
   return (
     <Link>
