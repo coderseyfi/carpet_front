@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Link, useParams } from "react-router-dom";
+import { Pagination } from "antd";
 
 const Carpets = () => {
   const { lang } = useLanguage();
@@ -15,9 +16,18 @@ const Carpets = () => {
   const { id } = useParams();
   const [carpets, setCarpets] = useState([]);
 
-  const getCarpets = async () => {
-    const { data } = await axiosInstance.get(`/carpets?subcategory_id=${id}`);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [total, setTotal] = useState(0);
+
+  const getCarpets = async (page = 1) => {
+    const { data } = await axiosInstance.get(
+      `/carpets?subcategory_id=${id}&page=${page}`,
+    );
     setCarpets(data.data);
+    setCurrentPage(data.current_page);
+    setPerPage(data.per_page);
+    setTotal(data.total);
   };
 
   useEffect(() => {
@@ -25,8 +35,13 @@ const Carpets = () => {
   }, []);
 
   useEffect(() => {
-    getCarpets();
+    getCarpets(1);
   }, [id, lang]);
+
+  const handlePageChange = (page) => {
+    getCarpets(page);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -49,9 +64,10 @@ const Carpets = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
           {carpets?.map((carpet) => (
             <Link
+              key={carpet.id}
               to={`/carpet-detail/${carpet.id}`}
               state={{ collectionId, subcategoryId: id }}>
-              <div key={carpet.id} className="cursor-pointer group">
+              <div className="cursor-pointer group">
                 <div className="overflow-hidden bg-white mb-0 aspect-3/4 flex items-center justify-center">
                   <img
                     src={IMAGE_URL + carpet?.images[0]?.image}
@@ -72,6 +88,18 @@ const Carpets = () => {
             </Link>
           ))}
         </div>
+
+        {total > perPage && (
+          <div className="flex justify-center mt-10">
+            <Pagination
+              current={currentPage}
+              pageSize={perPage}
+              total={total}
+              onChange={handlePageChange}
+              showSizeChanger={false}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

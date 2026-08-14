@@ -24,7 +24,7 @@ export default function CollectionDetail() {
     setCollectionDetail(response.data);
   };
 
-  const getSubcategories = async (categoryId) => {
+  const getSubcategories = async (categoryId, { scroll = true } = {}) => {
     try {
       if (selectedCategoryId === categoryId) return;
 
@@ -35,12 +35,14 @@ export default function CollectionDetail() {
       setSubcategories(data.data);
       setSelectedCategoryId(categoryId);
 
-      setTimeout(() => {
-        subcategoryRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
+      if (scroll) {
+        setTimeout(() => {
+          subcategoryRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -49,6 +51,16 @@ export default function CollectionDetail() {
   useEffect(() => {
     getCollectionDetail();
   }, [id, lang]);
+
+  // Kateqoriya sayı 1 olduqda subkateqoriyaları avtomatik gətir
+  useEffect(() => {
+    const categories = collectionDetail?.categories;
+    if (categories && categories.length === 1) {
+      getSubcategories(categories[0].id, { scroll: false });
+    }
+  }, [collectionDetail]);
+
+  const hasMultipleCategories = (collectionDetail?.categories?.length || 0) > 1;
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -82,47 +94,49 @@ export default function CollectionDetail() {
       </div>
 
       <div className="max-w-425 mx-auto py-10 px-5">
-        {/* Categories Section */}
-        <div>
-          <h3 className="text-[28px] tracking-widest text-black uppercase mb-5">
-            {t("categories")}
-          </h3>
+        {/* Categories Section — yalnız 1-dən çox kateqoriya varsa göstərilir */}
+        {hasMultipleCategories && (
+          <div>
+            <h3 className="text-[28px] tracking-widest text-black uppercase mb-5">
+              {t("categories")}
+            </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
-            {collectionDetail?.categories?.map((category) => (
-              <div
-                key={category.id}
-                onClick={() => getSubcategories(category.id)}
-                className={`cursor-pointer group border transition-all duration-300 ${selectedCategoryId === category.id ? "border-[#7D2829]" : "border-transparent"}`}>
-                {/* Image area */}
-                <div className="overflow-hidden bg-white mb-0 aspect-3/4 flex items-center justify-center">
-                  <img
-                    src={
-                      category.image
-                        ? `${IMAGE_URL}/${category.image}`
-                        : categoryCarpet
-                    }
-                    alt={category.name}
-                    className="w-[60%] h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Info area */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+              {collectionDetail?.categories?.map((category) => (
                 <div
-                  className={`px-5 py-5 transition-all duration-300 ${selectedCategoryId === category.id ? "bg-[#7D2829]" : "bg-[#FFF6DD]"}`}>
-                  <h3
-                    className={`text-[28px] font-normal transition-all duration-300 ${selectedCategoryId === category.id ? "text-white" : "text-[#000000]"}`}>
-                    {collectionDetail?.name}
-                  </h3>
+                  key={category.id}
+                  onClick={() => getSubcategories(category.id)}
+                  className={`cursor-pointer group border transition-all duration-300 ${selectedCategoryId === category.id ? "border-[#7D2829]" : "border-transparent"}`}>
+                  {/* Image area */}
+                  <div className="overflow-hidden bg-white mb-0 aspect-3/4 flex items-center justify-center">
+                    <img
+                      src={
+                        category.image
+                          ? `${IMAGE_URL}/${category.image}`
+                          : categoryCarpet
+                      }
+                      alt={category.name}
+                      className="w-[60%] h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
 
-                  <div className="flex items-center gap-2 mt-0.5 text-[20px] text-[#797979]">
-                    <span>{collectionDetail?.carpet_count} carpets</span>
+                  {/* Info area */}
+                  <div
+                    className={`px-5 py-5 transition-all duration-300 ${selectedCategoryId === category.id ? "bg-[#7D2829]" : "bg-[#FFF6DD]"}`}>
+                    <h3
+                      className={`text-[28px] font-normal transition-all duration-300 ${selectedCategoryId === category.id ? "text-white" : "text-[#000000]"}`}>
+                      {collectionDetail?.name}
+                    </h3>
+
+                    <div className="flex items-center gap-2 mt-0.5 text-[20px] text-[#797979]">
+                      <span>{collectionDetail?.carpet_count} carpets</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {subcategories.length > 0 && (
@@ -135,6 +149,7 @@ export default function CollectionDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
               {subcategories.map((subcategory) => (
                 <Link
+                  key={subcategory.id}
                   to={`/carpets/${subcategory.id}`}
                   state={{ collectionId: id, subcategoryId: subcategory.id }}
                   className="cursor-pointer group block">
