@@ -12,7 +12,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import EventCardOld from "@/components/Cards/EventCardOld";
 import parse from "html-react-parser";
 
-export default function NewsDetail() {
+export default function ExhibitionDetail() {
   const { lang } = useLanguage();
   const { t } = useTranslation();
   const { id } = useParams();
@@ -75,7 +75,7 @@ export default function NewsDetail() {
           </div>
 
           <div className="text-center">
-            <p>{parse(eventDetail?.text)}</p>
+            <p>{eventDetail?.text && parse(eventDetail.text)}</p>
           </div>
           <div className="cards-container">
             {/* <p className="title">Now live</p> */}

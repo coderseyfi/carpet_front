@@ -6,7 +6,6 @@ import Exhibitions from "../pages/Exhibitions/exhibitions";
 import News from "../pages/News/news";
 import NewsDetail from "../pages/NewsDetail/newsDetail";
 import OurStory from "../pages/OurStory/OurStory";
-import ExhibitionDetail from "../pages/ExhibitionDetail/exhibitiondetail";
 import PlanVisit from "../pages/PlanVisit";
 import Teams from "@/pages/Teams";
 import Collections from "@/pages/CarpetManagement/Collections/Collections";
@@ -16,6 +15,7 @@ import CarpetDetail from "@/pages/CarpetManagement/Carpets/carpet-detail";
 import TeamDetail from "@/pages/Teams/Teams-detail";
 import Artists from "@/pages/Artists";
 import ArtistDetail from "@/pages/Artists/Artists-detail";
+import ExhibitionDetail from "@/pages/ExhibitionDetail/exhibitiondetail";
 
 const Root = () => {
   return (

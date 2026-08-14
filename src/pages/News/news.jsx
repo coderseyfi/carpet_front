@@ -58,35 +58,41 @@ export default function News() {
       <div className="newspage">
         <div className="news">
           <div className="main container">
-            <h1 className="slogan newspage-title">Populyar Xəbərlər</h1>
-            <div className="news-layout">
-              <div className="news-left w-full!">
-                <div className="news-img w-full">
-                  <img
-                    className="w-full"
-                    src={IMAGE_URL + mainNews?.base_image}
-                    alt=""
-                  />
-                </div>
+            {currentPage === 1 && (
+              <>
+                <h1 className="slogan newspage-title">Populyar Xəbərlər</h1>
+                <div className="news-layout">
+                  <div className="news-left w-full!">
+                    <div className="news-img w-full">
+                      <img
+                        className="w-full"
+                        src={IMAGE_URL + mainNews?.base_image}
+                        alt=""
+                      />
+                    </div>
 
-                <h3 className="news-title">{mainNews?.title}</h3>
+                    <h3 className="news-title">{mainNews?.title}</h3>
 
-                <div className="news-content">
-                  <p className="category">{mainNews?.news_categories?.name}</p>
-                  <p className="date">{mainNews?.date}</p>
-                </div>
-              </div>
-
-              <div className="news-right w-full">
-                {news?.slice(0, 4).map((card, index) => (
-                  <div
-                    key={card.id ?? index}
-                    onClick={() => navigate(`/news/${card.id}`)}>
-                    <NewsCard data={card} />
+                    <div className="news-content">
+                      <p className="category">
+                        {mainNews?.news_categories?.name}
+                      </p>
+                      <p className="date">{mainNews?.date}</p>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
+
+                  <div className="news-right w-full">
+                    {news?.slice(0, 4).map((card, index) => (
+                      <div
+                        key={card.id ?? index}
+                        onClick={() => navigate(`/news/${card.id}`)}>
+                        <NewsCard data={card} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
 
             <div className="news-card overflow-hidden">
               <h1 className="slogan allnews">{t("all_news")}</h1>

@@ -15,8 +15,8 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="main footer-conatiner">
-        <div className="footer-inner flex-col xl:flex-row">
+      <div className="main max-w-465 px-5 mx-auto">
+        <div className="footer-inner  flex-col xl:flex-row">
           <div className="footer-left">
             <img className="w-full md:w-auto " src={Logo1White} alt="Logo" />
           </div>

@@ -48,7 +48,7 @@ export default function Collections() {
                 })
               }
               className="cursor-pointer group">
-              <div className="overflow-hidden mb-0 aspect-3/4 flex items-center justify-center">
+              <div className="overflow-hidden mb-0 aspect-3/4 flex items-center justify-center bg-white">
                 <img
                   src={IMAGE_URL + collection.base_image}
                   alt={collection.name}

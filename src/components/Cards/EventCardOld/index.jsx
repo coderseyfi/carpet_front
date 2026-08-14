@@ -4,7 +4,7 @@ import { IMAGE_URL } from "@/api";
 
 const EventCardOld = ({ event }) => {
   return (
-    <div className="eventcard-section w-fullx] h-full">
+    <div className="eventcard-section w-full h-full">
       <div className="cursor-pointer">
         <div className="event-img-date">
           <div className="event-dates">
@@ -15,7 +15,7 @@ const EventCardOld = ({ event }) => {
 
           <div className="event-images  ">
             <img
-              className="max-h-[400px]"
+              className="w-full aspect-16/14"
               src={IMAGE_URL + event?.images[0]?.image_path}
               alt=""
             />
@@ -23,7 +23,7 @@ const EventCardOld = ({ event }) => {
         </div>
         <div className="event-text">
           <p className="card-title">{event?.title}</p>
-          <p className="card-subtitle">{event?.description}</p>
+          <p className="card-subtitle">{event?.events_categories?.name}</p>
         </div>
       </div>
     </div>
