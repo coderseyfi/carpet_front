@@ -8,6 +8,7 @@ import ArrowUp from "@/assets/images/plan_visit/arrow-r-up.svg";
 import { useEvents } from "@/context/EventContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import EventCardOld from "@/components/Cards/EventCardOld";
 
 export default function PlanVisit() {
   const { events } = useEvents();
@@ -145,7 +146,7 @@ export default function PlanVisit() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {events?.slice(0, 3).map((card) => (
                 <Link key={card.id} to={`/exhibitions/${card.id}`}>
-                  <EventCard event={card} />
+                  <EventCardOld event={card} />
                 </Link>
               ))}
             </div>
