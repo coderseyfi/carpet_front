@@ -95,7 +95,7 @@ export default function News() {
             )}
 
             <div className="news-card overflow-hidden">
-              <h1 className="slogan allnews">{t("all_news")}</h1>
+              <h1 className="slogan allnews mt-[50px]!">{t("all_news")}</h1>
               <Row gutter={[60, 30]}>
                 {news.map((card, index) => (
                   <Col
