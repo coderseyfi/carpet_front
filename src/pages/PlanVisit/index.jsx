@@ -3,7 +3,7 @@ import PageHeader from "../../components/Cards/PageHeader";
 import MuseumImg from "@/assets/images/plan_visit/museum.png";
 import ShushaImg from "@/assets/images/plan_visit/shusha.png";
 import LocationIco from "@/assets/images/plan_visit/location.svg";
-import EventCard from "../../components/Cards/EventCard";
+// import EventCard from "../../components/Cards/EventCard";
 import ArrowUp from "@/assets/images/plan_visit/arrow-r-up.svg";
 import { useEvents } from "@/context/EventContext";
 import { Link } from "react-router-dom";

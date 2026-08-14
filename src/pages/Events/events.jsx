@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance, { IMAGE_URL } from "@/api";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/context/LanguageContext";
-import EventCard from "@/components/Cards/eventCard";
+import EventCard from "@/components/Cards/EventCard";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
