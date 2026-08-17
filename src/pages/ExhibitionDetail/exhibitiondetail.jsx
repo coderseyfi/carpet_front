@@ -41,7 +41,9 @@ export default function ExhibitionDetail() {
 
       <div className="exhibitions-detail">
         <div className="main container">
+          <p className="text-center mt-10 text-[32px] font-medium">{eventDetail?.title}</p>
           <div className="detail">
+            <div className="text-center"></div>
             <div className="img">
               <img
                 src={IMAGE_URL + eventDetail?.images[0]?.image_path}

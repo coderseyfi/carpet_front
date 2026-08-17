@@ -19,11 +19,13 @@ export default function PlanVisit() {
       title: t("planVisit.bakuTitle"),
       address: t("planVisit.address"),
       image: MuseumImg,
+      link: "https://maps.app.goo.gl/d7Q2oxM2NsoUDyjx6",
     },
     {
       title: t("planVisit.shushaTitle"),
       address: t("planVisit.address"),
       image: ShushaImg,
+      link: "https://maps.app.goo.gl/2Z4S9b7MzBhfpEpe8",
     },
   ];
 
@@ -80,7 +82,12 @@ export default function PlanVisit() {
 
                   {/* Map */}
                   <div className="mb-[30px] flex items-center ">
-                    <p className="font-semibold">{t("planVisit.viewOnMap")}</p>
+                    <a
+                      href={museum.link}
+                      target="_blank"
+                      className="font-semibold">
+                      {t("planVisit.viewOnMap")}
+                    </a>
                     <img src={ArrowUp} alt="arrow" />
                   </div>
 
@@ -88,7 +95,7 @@ export default function PlanVisit() {
                   <a
                     href="https://iticket.az/events/museum/azerbaijan-national-carpet-museum"
                     target="_blank">
-                    <button className="text-black px-5 py-[10px] border">
+                    <button className="text-black px-5 py-[10px] border cursor-pointer">
                       {t("planVisit.getTickets")}
                     </button>
                   </a>
