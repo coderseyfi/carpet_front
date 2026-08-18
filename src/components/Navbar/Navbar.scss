@@ -52,6 +52,11 @@ $transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
   padding: 14px 24px;
   // height: 72px;
+
+  .logo-invert {
+  filter: invert(1) brightness(0);
+  transition: filter 0.3s ease;
+}
 }
 
 // ─── Logo ─────────────────────────────────────────────────
