@@ -81,7 +81,7 @@ const Carpets = () => {
                     {carpet.name}
                   </h3>
                   <p className="text-[20px] text-[#797979] mt-0.5">
-                    {carpet.images_count} {t("carpets")}
+                    {carpet.images_count} {t("exhibit")}
                   </p>
                 </div>
               </div>

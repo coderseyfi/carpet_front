@@ -34,7 +34,7 @@ const CarpetDetail = () => {
   }, [id, lang]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#F6F6F6]">
       <PageHeader
         title={carpet?.name}
         breadcrumbs={[
@@ -68,7 +68,7 @@ const CarpetDetail = () => {
               </div>
 
               {/* Center */}
-              <div className="flex-1 bg-[#F6F6F6] rounded flex items-center justify-center max-w-[730px] min-h-[720px] p-6">
+              <div className="flex-1 bg-white rounded flex items-center justify-center max-w-[730px] min-h-[720px] p-6">
                 {selectedImage && (
                   <img
                     src={IMAGE_URL + selectedImage.image}
@@ -89,7 +89,7 @@ const CarpetDetail = () => {
                     <img
                       src={IMAGE_URL + img.image}
                       alt={`${carpet.name} - ${img.id}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-white"
                     />
                   </div>
                 ))}

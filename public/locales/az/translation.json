@@ -108,11 +108,12 @@
     "trending": "Trenddə olanlar"
   },
   "categories": "Kateqoriyalar",
+  "category": "kateqoriya",
   "subcategories": "Alt kateqoriyalar",
   "carpets": "Xalçalar",
   "carpetDetail":"Xalça detalı",
   "event_detail": "Tədbir detalı",
-  
+ "exhibit": "eksponat",
   "all_news": "Bütün xəbərlər",
   "news_detail": "Xəbər detalı"
 }

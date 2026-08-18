@@ -109,6 +109,9 @@
   "categories": "Categories",
   "subcategories": "Subcategories",
   "carpets": "Carpets",
+   "exhibit": "exhibit",
+  "category": "category",
+
    "carpetDetail": "Carpet detail",
    "event_detail": "Event detail",
   "all_news": "All news",

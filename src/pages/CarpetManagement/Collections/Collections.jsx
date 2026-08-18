@@ -64,12 +64,16 @@ export default function Collections() {
                   {/* {collection.categories} categories &nbsp;•&nbsp; {collection.carpets} carpets */}
                 </p>
                 <div className="flex items-center gap-2 mt-0.5 text-[20px] text-[#797979]">
+                  {collection?.categories?.length > 1 && (
+                    <>
+                      <span>
+                        {collection.categories.length} {t("category")}
+                      </span>
+                      <span>•</span>
+                    </>
+                  )}
                   <span>
-                    {collection?.categories?.length} {t("categories")}
-                  </span>
-                  <span>•</span>
-                  <span>
-                    {collection?.carpet_count} {t("carpets")}
+                    {collection?.carpet_count} {t("exhibit")}
                   </span>
                 </div>
               </div>
