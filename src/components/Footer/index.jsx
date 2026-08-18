@@ -10,6 +10,8 @@ import Linkedin from "../../assets/images/linkedin.svg";
 import Fb from "../../assets/images/fb.svg";
 import Logo1White from "../../assets/images/footer/footer_logo.svg";
 
+import Rules from "@/assets/files/qaydalar.pdf";
+
 const Footer = () => {
   const { t } = useTranslation();
 
@@ -134,9 +136,9 @@ const Footer = () => {
       </div>
 
       <div className="copyright">
-        <Link to="/terms-and-conditions">
+        <a href={Rules} target="_blank">
           <p>{t("footer.terms")}</p>
-        </Link>
+        </a>
 
         <p>{t("footer.copyright")}</p>
       </div>
