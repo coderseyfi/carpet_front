@@ -25,7 +25,7 @@ export default function Hero() {
         <a
           href="https://iticket.az/events/museum/azerbaijan-national-carpet-museum"
           target="_blank"
-          className="cursor-pointer bg-white px-6 py-3 text-base font-medium text-black">
+          className="cursor-pointer bg-white px-6 py-3 text-base font-medium text-black transition-colors duration-300 hover:bg-black hover:text-white">
           {t("hero.getTickets")}
         </a>
       </div>

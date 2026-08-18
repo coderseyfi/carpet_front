@@ -9,7 +9,7 @@
     "ourStory": "Tariximiz",
     "museumTeams": "Muzey komandası",
     "news": "Xəbərlər",
-    "events": "Tədbirlər və Sərgilər",
+    "events": "Tədbirlər və sərgilər",
     "home": "Ana səhifə"
   },
   "hero": {
@@ -19,7 +19,7 @@
     "bookDesc": "Bu mətn sadəcə demo mətndir və gələcəkdə dəyişdiriləcək."
   },
   "events": {
-    "title": "Tədbirlər"
+    "title": "Tədbirlər və sərgilər"
   },
   "collection": {
     "discover": "Kolleksiyaları kəşf et",
