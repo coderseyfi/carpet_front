@@ -167,11 +167,13 @@ const Navbar = () => {
         className={`navbar ${isHome && !isScroll ? "navbar-transparent" : "navbar-solid"}`}>
         <div className="navbar-inner">
           <div className="navbar-left" onClick={() => navigate("/")}>
-            <img
-              src={LangLogo}
-              alt="Logo"
-              className={`logo sm:w-auto ${isTransparent ? "logo-white" : ""} ${!isHome ? "logo-invert" : ""}`}
-            />
+            <div className="logo-wrapper">
+              <img
+                src={LangLogo}
+                alt="Logo"
+                className={`logo sm:w-auto ${isTransparent ? "logo-white" : ""} ${!isHome ? "logo-invert" : ""}`}
+              />
+            </div>
           </div>
 
           <nav className="navbar-right" aria-label="Primary">

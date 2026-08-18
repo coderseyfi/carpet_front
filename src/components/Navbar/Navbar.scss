@@ -53,20 +53,29 @@ $transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
   padding: 14px 24px;
   // height: 72px;
 
-  .logo-invert {
-  filter: invert(1) brightness(0);
-  transition: filter 0.3s ease;
-}
 }
 
 // ─── Logo ─────────────────────────────────────────────────
 .navbar-left {
-  cursor: pointer;
+cursor: pointer;
+  
+  .logo-invert {
+  filter: invert(1) brightness(0);
+  transition: filter 0.3s ease;
+}
+ .logo-wrapper {
+  width: 180px;
+  height: 60px; // bütün logolar üçün sabit hündürlük seçin
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .logo {
-    // height: 40px;
-    width: 180px;
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // nisbəti pozmadan konteynerə sığdırır
   }
+}
 }
 
 // ─── Desktop Nav ──────────────────────────────────────────
