@@ -171,7 +171,7 @@ const Navbar = () => {
               <img
                 src={LangLogo}
                 alt="Logo"
-                className={`logo sm:w-auto ${isTransparent ? "logo-white" : ""} ${!isHome ? "logo-invert" : ""}`}
+                className={`logo sm:w-auto ${isTransparent ? "logo-white" : ""} ${!isHome || isScroll ? "logo-invert" : ""}`}
               />
             </div>
           </div>

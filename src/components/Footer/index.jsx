@@ -8,19 +8,32 @@ import Twitter from "../../assets/images/twitter.svg";
 import Instagram from "../../assets/images/instagram.svg";
 import Linkedin from "../../assets/images/linkedin.svg";
 import Fb from "../../assets/images/fb.svg";
-import Logo1White from "../../assets/images/footer/footer_logo.svg";
+
+import LogoRU from "@/assets/images/header/logo_ru.svg";
+import LogoAZ from "@/assets/images/header/logo_az.svg";
+import LogoEn from "@/assets/images/header/logo_en.svg";
 
 import Rules from "@/assets/files/qaydalar.pdf";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { lang } = useLanguage();
+
+  const logoByLang = {
+    az: LogoAZ,
+    en: LogoEn,
+    ru: LogoRU,
+  };
+
+  const LangLogo = logoByLang[lang] || LogoEn;
 
   return (
     <footer className="footer">
       <div className="main max-w-465 px-5 mx-auto">
         <div className="footer-inner  flex-col xl:flex-row">
-          <div className="footer-left">
-            <img className="w-full md:w-auto " src={Logo1White} alt="Logo" />
+          <div className="footer-left h-fit w-max bg-[#7D2829] px-10 py-7">
+            <img className="w-full md:w-auto " src={LangLogo} alt="Logo" />
           </div>
 
           <div className="footer-right flex-col lg:flex-row">
@@ -122,7 +135,8 @@ const Footer = () => {
                 <a
                   href="https://maps.app.goo.gl/2Z4S9b7MzBhfpEpe8"
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                  className="max-w-[400px] inline-block">
                   <p>{t("footer.shushaAddress")}</p>
                 </a>
 
