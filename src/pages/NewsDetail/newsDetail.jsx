@@ -62,6 +62,23 @@ export default function NewsDetail() {
 
   const visibleSlides = Math.min(images.length || 1, 3);
 
+  const videoUrl = newsDetail?.link;
+
+  const getYoutubeEmbedUrl = (url) => {
+    if (!url) return null;
+
+    try {
+      const parsedUrl = new URL(url);
+      const videoId = parsedUrl.searchParams.get("v");
+
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const youtubeEmbedUrl = getYoutubeEmbedUrl(videoUrl);
+
   return (
     <div>
       <PageHeader
@@ -85,27 +102,45 @@ export default function NewsDetail() {
             <img
               src={IMAGE_URL + newsDetail.base_image}
               alt={newsDetail?.title}
-              className="news-detail-main-img"
+              className="news-detail-main-img w-full "
             />
           )}
 
-          <div className="news-detail-content text-justify md:text-start">
+          <div className="news-detail-content text-justify md:text-start mb-[50px]">
             <p>
               {firstPart && parse(firstPart)}
               {secondPart && "..."}
             </p>
           </div>
 
+          {youtubeEmbedUrl && (
+            <div className="w-full max-w-[1140px] mx-auto aspect-video overflow-hidden rounded-lg mb-8">
+              <iframe
+                className="w-full h-full"
+                src={youtubeEmbedUrl}
+                title={newsDetail?.title || "YouTube video"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          )}
+
           {images.length > 0 && (
             <div style={{ margin: "35px 0" }}>
               <Swiper
+                modules={[Autoplay]}
+                loop={images.length > visibleSlides}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
                 spaceBetween={16}
                 slidesPerView={1}
                 breakpoints={{
                   640: { slidesPerView: Math.min(images.length || 1, 2) },
                   1024: { slidesPerView: visibleSlides },
                 }}>
-                {images.slice(0, 3).map((item, index) => (
+                {images.slice(1).map((item, index) => (
                   <SwiperSlide key={item.id || index}>
                     <div className="w-full overflow-hidden">
                       <a
@@ -125,14 +160,14 @@ export default function NewsDetail() {
               </Swiper>
 
               {/* Swiperdə görünməyən digər şəkillər */}
-              {images.slice(3).map((item, index) => (
+              {/* {images.slice(1).map((item, index) => (
                 <a
                   key={item.id || `hidden-${index}`}
                   href={IMAGE_URL + item.image_path}
                   data-fancybox="gallery"
                   className="hidden"
                 />
-              ))}
+              ))} */}
             </div>
           )}
 

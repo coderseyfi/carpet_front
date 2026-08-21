@@ -32,8 +32,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="main max-w-465 px-5 mx-auto">
         <div className="footer-inner  flex-col xl:flex-row">
-          <div className="footer-left h-fit w-max bg-[#7D2829] px-10 py-7">
-            <img className="w-full md:w-auto " src={LangLogo} alt="Logo" />
+          <div className="footer-left h-fit sm:max-w-[400px] bg-[#7D2829] px-10 py-7">
+            <img className="w-full" src={LangLogo} alt="Logo" />
           </div>
 
           <div className="footer-right flex-col lg:flex-row">

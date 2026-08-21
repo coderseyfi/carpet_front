@@ -13,7 +13,8 @@
     .news-detail-main-img {
       max-width: 1240px;
       margin: 0 auto;
-      height: clamp(240px, 50vw, 700px);
+      // height: clamp(240px, 50vw, 700px);
+      aspect-ratio: 16/9;
       margin-bottom: 20px;
       object-fit: cover;
     }

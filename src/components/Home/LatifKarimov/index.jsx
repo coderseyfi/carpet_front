@@ -8,7 +8,7 @@ const LatifKarimov = () => {
 
   return (
     <section className="w-full min-h-screen bg-cover bg-center flex items-center" style={{ backgroundImage: `url(${LatifBg})` }}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-10!">
         <div className="max-w-[740px]">
           <h2 className="text-4xl font-beau! text-[clamp(32px,9vw,150px)] text-black mb-4">{t("latif.title")}</h2>
 
