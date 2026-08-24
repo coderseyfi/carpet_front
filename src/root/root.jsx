@@ -17,6 +17,7 @@ import Artists from '@/pages/Artists'
 import ArtistDetail from '@/pages/Artists/Artists-detail'
 import ExhibitionDetail from '@/pages/ExhibitionDetail/exhibitiondetail'
 import AccessibilityPage from "@/pages/Accessibility/AccessibilityPage";
+import PublicationsPage from '@/pages/Publications/PublicationsPage'
 
 const Root = () => {
   return (
@@ -50,7 +51,12 @@ const Root = () => {
 
           <Route element={<PrivateRoute />}></Route>
 
-          <Route path={'/accessibility'} element={<AccessibilityPage />}></Route>
+          <Route
+            path={'/accessibility'}
+            element={<AccessibilityPage />}></Route>
+          <Route
+            path={'/publications'}
+            element={<PublicationsPage />}></Route>
         </Route>
 
         {/* <Route path={`*`} element={<NotFound />} /> */}

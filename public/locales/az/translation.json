@@ -111,10 +111,11 @@
   "category": "kateqoriya",
   "subcategories": "Alt kateqoriyalar",
   "carpets": "Xalçalar",
-  "carpetDetail":"Xalça detalı",
+  "carpetDetail": "Xalça detalı",
   "event_detail": "Tədbir detalı",
- "exhibit": "eksponat",
+  "exhibit": "eksponat",
   "all_news": "Bütün xəbərlər",
   "news_detail": "Xəbər detalı",
-  "accessibility": "Əlçatanlıq"
+  "accessibility": "Əlçatanlıq",
+  "publications": "Nəşrlər"
 }

@@ -153,6 +153,11 @@ const Navbar = () => {
           key: '9',
           path: '/news',
         },
+        {
+          label: t('publications'),
+          key: '10',
+          path: '/publications',
+        },
       ],
     },
     {

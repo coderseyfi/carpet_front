@@ -109,11 +109,13 @@
   "categories": "Categories",
   "subcategories": "Subcategories",
   "carpets": "Carpets",
-   "exhibit": "exhibit",
+  "exhibit": "exhibit",
   "category": "category",
 
-   "carpetDetail": "Carpet detail",
-   "event_detail": "Event detail",
+  "carpetDetail": "Carpet detail",
+  "event_detail": "Event detail",
   "all_news": "All news",
-  "news_detail": "News detail"
+  "news_detail": "News detail",
+  "accessibility": "Accessibility",
+  "publications": "Publications"
 }

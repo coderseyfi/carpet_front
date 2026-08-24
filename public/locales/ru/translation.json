@@ -112,9 +112,11 @@
   "subcategories": "Подкатегории",
   "carpets": "Ковры",
   "carpet": "ковер",
-"exhibit": "экспонат",
-   "carpetDetail": "Детали ковра",
+  "exhibit": "экспонат",
+  "carpetDetail": "Детали ковра",
   "event_detail": "Детали события",
   "all_news": "Все новости",
-  "news_detail": "Детали новости"
+  "news_detail": "Детали новости",
+  "accessibility": "Доступность",
+  "publications": "Публикации"
 }
