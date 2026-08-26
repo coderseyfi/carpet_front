@@ -123,13 +123,11 @@ export default function CollectionDetail() {
                   {/* Info area */}
                   <div
                     className={`px-5 py-5 transition-all duration-300 ${selectedCategoryId === category.id ? "bg-[#7D2829]" : "bg-[#FFF6DD]"}`}>
-                    {collectionDetail?.categories?.map((item) => (
-                      <h3
-                        key={item.id}
-                        className={`text-[28px] font-normal transition-all duration-300 ${selectedCategoryId === item.id ? "text-white" : "text-[#000000]"}`}>
-                        {item.name_az}
-                      </h3>
-                    ))}
+                    <h3
+                      key={category.id}
+                      className={`text-[20px] font-normal transition-all duration-300 ${selectedCategoryId === category.id ? "text-white" : "text-[#000000]"}`}>
+                      {category.name}
+                    </h3>
 
                     <div className="flex items-center gap-2 mt-0.5 text-[20px] text-[#797979]">
                       <span>
