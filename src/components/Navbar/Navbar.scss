@@ -50,7 +50,7 @@ $transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: space-between;
   max-width: 1892px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px 20px;
   // height: 72px;
 
 }
@@ -125,6 +125,43 @@ cursor: pointer;
 
   @media (max-width: 992px) {
     display: none;
+  }
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; // icon sağda sabit qalsın, input sola açılsın
+  overflow: hidden;
+
+  .navbar-search-input {
+    width: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+    transition: width 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+    color: inherit;
+  }
+
+  .navbar-search-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &.is-open .navbar-search-input {
+    width: 160px;
+    opacity: 1;
+    padding: 0 8px;
+  }
+
+  &.search-white {
+    color: #fff;
   }
 }
 

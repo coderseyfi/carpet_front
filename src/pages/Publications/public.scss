@@ -1,0 +1,25 @@
+.publications-filter-select {
+  width: 100%;
+
+  .ant-select-selector {
+    border: 1px solid #111 !important;
+    border-radius: 0 !important;
+    padding: 14px 16px !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-select-selection-item,
+  .ant-select-selection-placeholder {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    color: #111;
+  }
+
+  .ant-select-arrow {
+    color: #111;
+  }
+}

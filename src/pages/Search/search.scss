@@ -1,0 +1,110 @@
+.search-page {
+  .search-filter-row {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 28px;
+
+    .search-input {
+      max-width: 360px;
+
+      .ant-input {
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+      }
+    }
+
+    .search-submit-btn {
+      background: #d3a04c;
+      border-color: #d3a04c;
+      color: #111;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      padding: 0 32px;
+
+      &:hover,
+      &:focus {
+        background: #c4923d !important;
+        border-color: #c4923d !important;
+        color: #111 !important;
+      }
+    }
+  }
+
+  .search-results-count {
+    display: block;
+    margin-bottom: 24px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #111;
+  }
+
+  .search-result-list {
+    .ant-list-item {
+      border-block-end: 1px solid #e2ded6;
+      padding: 24px 0;
+
+      &:first-child {
+        border-block-start: none;
+      }
+    }
+
+    .ant-list-item-meta {
+      align-items: stretch;
+    }
+
+    .ant-list-item-meta-avatar {
+      margin-inline-end: 24px;
+    }
+  }
+
+  .search-result-link {
+    display: flex;
+    width: 100%;
+    color: inherit;
+
+    &:hover .search-result-title {
+      color: #b08d3e;
+    }
+  }
+
+  .search-result-thumb {
+    width: 160px;
+    height: 136px;
+    overflow: hidden;
+    background: #f2f2f2;
+    flex: none;
+  }
+
+  .search-result-title {
+    font-family: "Playfair Display", Georgia, serif !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    transition: color 0.2s ease;
+  }
+
+  .search-result-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .search-result-excerpt {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #6b6b6b;
+    max-width: 720px;
+    margin-bottom: 8px !important;
+  }
+
+  .search-result-more {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #b08d3e;
+  }
+}
