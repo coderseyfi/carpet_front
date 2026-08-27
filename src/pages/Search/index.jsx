@@ -4,9 +4,10 @@ import { useLanguage } from "@/context/LanguageContext";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams, Link } from "react-router-dom";
-import { Input, Button, List, Typography, Pagination, Empty, Spin } from "antd";
+import { Input, Button,  Typography, Pagination, Empty, Spin } from "antd";
 import { SearchOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import "./search.scss";
+import parse from "html-react-parser";
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -16,7 +17,10 @@ export default function SearchPage() {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [searchValue, setSearchValue] = useState(searchParams.get("q") || "");
+  const [searchValue, setSearchValue] = useState(
+    searchParams.get("title") || "",
+  );
+
   const [results, setResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
@@ -25,27 +29,25 @@ export default function SearchPage() {
 
   const query = searchParams.get("title") || "";
 
-  const getResults = async (page = 1) => {
-    if (!query) {
-      setResults([]);
-      setTotal(0);
-      return;
-    }
-
+  const getResults = async (page = 1, searchTitle = query) => {
     try {
       setLoading(true);
 
       const res = await axiosInstance.get("/common/search", {
         params: {
-          title: query,
+          title: searchTitle,
           page,
         },
       });
 
       setResults(res.data.data || []);
       setCurrentPage(res.data.current_page || page);
-      setPerPage(res.data.per_page || perPage);
+      setPerPage(res.data.per_page || 10);
       setTotal(res.data.total || 0);
+    } catch (error) {
+      console.error("Search error:", error);
+      setResults([]);
+      setTotal(0);
     } finally {
       setLoading(false);
     }
@@ -56,60 +58,83 @@ export default function SearchPage() {
     getResults(1);
   }, [query, lang]);
 
-  const handleSearchSubmit = (value) => {
-    const trimmed = (value ?? searchValue).trim();
-    if (!trimmed) return;
-    setSearchParams({ q: trimmed });
+  const handleSearchSubmit = () => {
+    const trimmed = searchValue.trim();
+
+    setCurrentPage(1);
+
+    // URL parametrini dəyişirik
+    if (trimmed) {
+      setSearchParams({
+        title: trimmed,
+      });
+    } else {
+      // Boş input olanda title parametrini silirik
+      setSearchParams({});
+    }
+
+    // Əgər query artıq boşdursa, useEffect yenidən trigger olmayacaq.
+    // Ona görə bütün nəticələri birbaşa gətiririk.
+    if (!trimmed && !query) {
+      getResults(1, "");
+    }
   };
 
   const handlePageChange = (page) => {
     getResults(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const generateLink = (type, item) => {
     switch (type) {
-      //   case "projects":
-      //     return `/projects/${item.id}`;
-      //   case "announcements":
-      //     return `/announcements/${item.id}`;
+      // case "projects":
+      //   return `/projects/${item.id}`;
+
+      // case "announcements":
+      //   return `/announcements/${item.id}`;
+
       case "events":
         return `/exhibitions/${item.id}`;
+
       case "news":
         return `/news/${item.id}`;
+
       default:
-        return `/`;
+        return "/";
     }
-  };
-
-  const formatDate = (dateStr) => {
-    if (!dateStr) return "";
-    const d = new Date(dateStr);
-    if (Number.isNaN(d.getTime())) return "";
-
-    const day = String(d.getDate()).padStart(2, "0");
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const year = d.getFullYear();
-    const hours = String(d.getHours()).padStart(2, "0");
-    const minutes = String(d.getMinutes()).padStart(2, "0");
-
-    return `${day}.${month}.${year} ${hours}:${minutes}`;
   };
 
   return (
     <div className="w-full bg-white search-page">
-      <PageHeader title={t("search")} breadcrumbs={[{ label: t("search") }]} />
+      <PageHeader
+        title={t("search")}
+        breadcrumbs={[
+          {
+            label: t("search"),
+          },
+        ]}
+      />
 
       <div className="max-w-[1740px] mx-auto px-5">
         <section className="pt-[32px]">
           <div className="search-filter-row">
             <Input
               size="large"
-              placeholder={t("enterSearchTerm") || "Enter a search term..."}
-              prefix={<SearchOutlined style={{ color: "#6b6b6b" }} />}
+              placeholder={t("search")}
+              prefix={
+                <SearchOutlined
+                  style={{
+                    color: "#6b6b6b",
+                  }}
+                />
+              }
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              onPressEnter={() => handleSearchSubmit()}
+              onPressEnter={handleSearchSubmit}
               className="search-input"
               allowClear
             />
@@ -118,14 +143,14 @@ export default function SearchPage() {
               type="primary"
               size="large"
               className="search-submit-btn"
-              onClick={() => handleSearchSubmit()}>
+              onClick={handleSearchSubmit}>
               {t("search") || "Search"}
             </Button>
           </div>
         </section>
 
         <section className="pt-[36px] pb-[80px]">
-          {query && (
+          {total > 0 && (
             <Text strong className="search-results-count">
               {`${t("onSearch") || "On search"} ${total} ${
                 t("resultsFound") || "results found"
@@ -134,65 +159,56 @@ export default function SearchPage() {
           )}
 
           <Spin spinning={loading}>
-            {!loading && query && results.length === 0 ? (
+            {!loading && results.length === 0 ? (
               <Empty
                 className="py-[60px]"
                 description={t("noResultsFound") || "No results found"}
               />
             ) : (
-              <List
-                itemLayout="horizontal"
-                dataSource={results}
-                className="search-result-list"
-                renderItem={(item) => (
-                  <List.Item key={item.id}>
+              <div className="search-result-list">
+                {results.map((item) => (
+                  <div
+                    key={`${item.type}-${item.id}`}
+                    className="search-result-item">
                     <Link
                       to={generateLink(item.type, item)}
                       className="search-result-link">
-                      <List.Item.Meta
-                        avatar={
-                          <div className="search-result-thumb">
-                            <img
-                              src={IMAGE_URL + item.image}
-                              alt={item.title}
-                              className="h-full w-full object-cover"
-                            />
-                          </div>
-                        }
-                        title={
-                          <Title level={5} className="search-result-title">
+                      <div className="search-result-content flex gap-5 justify-center items-center md:items-start md:flex-row flex-col pb-5">
+                        <div className="search-result-thumb">
+                          <img
+                            src={IMAGE_URL + item.image}
+                            alt={item.title}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+
+                        <div className="search-result-info">
+                          <h3 className="search-result-title font-roboto">
                             {item.title}
-                          </Title>
-                        }
-                        description={
-                          <>
-                            {item.created_at && (
-                              <Text
-                                type="secondary"
-                                className="search-result-date">
-                                <ClockCircleOutlined />{" "}
-                                {formatDate(item.created_at)}
-                              </Text>
-                            )}
+                          </h3>
 
-                            {item.excerpt && (
-                              <Paragraph
-                                className="search-result-excerpt"
-                                ellipsis={{ rows: 2 }}>
-                                {item.excerpt}
-                              </Paragraph>
-                            )}
+                          {item.created_at && (
+                            <div className="search-result-date font-roboto">
+                              <ClockCircleOutlined />
+                              <span>{item.created_at}</span>
+                            </div>
+                          )}
 
-                            <Text className="search-result-more">
-                              {t("more") || "More"} →
-                            </Text>
-                          </>
-                        }
-                      />
+                          {item.excerpt && (
+                            <div className="search-result-excerpt font-roboto">
+                              {parse(item.excerpt)}
+                            </div>
+                          )}
+
+                          <span className="search-result-more font-roboto">
+                            {t("more") || "More"} →
+                          </span>
+                        </div>
+                      </div>
                     </Link>
-                  </List.Item>
-                )}
-              />
+                  </div>
+                ))}
+              </div>
             )}
           </Spin>
 
