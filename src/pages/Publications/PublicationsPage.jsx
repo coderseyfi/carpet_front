@@ -80,7 +80,7 @@ export default function PublicationsPage() {
               /> */}
 
               <Select
-                placeholder="Year"
+                placeholder={t("year")}
                 allowClear
                 value={year}
                 onChange={(value) => setYear(value)}
