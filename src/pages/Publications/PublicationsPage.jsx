@@ -40,12 +40,12 @@ export default function PublicationsPage() {
       const res = await axiosInstance.get("/documents", {
         params: {
           page,
-          language: language || undefined,
+          // lang: language || undefined,
           year: year || undefined,
         },
       });
 
-      setDocuments(res);
+      setDocuments(res.data);
       setCurrentPage(res.data.current_page);
       setPerPage(res.data.per_page);
       setTotal(res.data.total);
@@ -56,19 +56,7 @@ export default function PublicationsPage() {
 
   useEffect(() => {
     getDocuments(1);
-  }, [lang, language, year]);
-
-  useEffect(() => {
-    getDocuments(currentPage);
-  }, [lang]);
-
-  const getYear = (dateStr) => {
-    if (!dateStr) return "";
-
-    const d = new Date(dateStr);
-
-    return Number.isNaN(d.getTime()) ? "" : d.getFullYear();
-  };
+  }, [lang, year]);
 
   return (
     <>
@@ -81,7 +69,7 @@ export default function PublicationsPage() {
         <div className="max-w-[1740px] mx-auto px-5">
           <section className="pt-[32px]">
             <div className="grid grid-cols-4 gap-[20px] border-b border-[#111] pb-[28px]">
-              <Select
+              {/* <Select
                 placeholder="Language"
                 allowClear
                 value={language}
@@ -89,7 +77,7 @@ export default function PublicationsPage() {
                 options={languageOptions}
                 className="publications-filter-select"
                 suffixIcon={<span className="text-[10px]">▼</span>}
-              />
+              /> */}
 
               <Select
                 placeholder="Year"
@@ -111,17 +99,19 @@ export default function PublicationsPage() {
             </div>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 sm:grid-cols-2 gap-x-[48px] border-b border-[#E2DED6]">
-              {documents.map((doc) => (
+              {documents?.map((doc) => (
                 <a
-                  key={doc.id}
-                  href={doc.link || "#"}
-                  target={doc.link ? "_blank" : undefined}
-                  rel={doc.link ? "noopener noreferrer" : undefined}
+                  key={doc?.id}
+                  href={doc?.file ? doc?.file : doc?.link || "#"}
+                  target={doc?.file || doc?.link ? "_blank" : undefined}
+                  rel={
+                    doc?.file || doc?.link ? "noopener noreferrer" : undefined
+                  }
                   className="flex items-stretch gap-[20px] border-t border-[#E2DED6] py-[20px]">
-                  {doc.file ? (
+                  {doc?.file || doc?.cover_image ? (
                     <div className="h-[128px] w-[96px] flex-none overflow-hidden">
                       <img
-                        src={doc.file}
+                        src={doc.cover_image}
                         alt={doc.title}
                         className="h-full w-full object-cover"
                       />
@@ -135,7 +125,7 @@ export default function PublicationsPage() {
                   <div className="flex flex-col justify-center">
                     {doc.created_at && (
                       <div className="mb-[9px] font-['Roboto Mono',monospace] text-[11px] font-normal leading-none text-[#8E2B2B]">
-                        {getYear(doc.created_at)}
+                        {doc.year}
                       </div>
                     )}
 
