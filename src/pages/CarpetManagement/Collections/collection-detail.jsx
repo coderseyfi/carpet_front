@@ -131,7 +131,7 @@ export default function CollectionDetail() {
 
                     <div className="flex items-center gap-2 mt-0.5 text-[20px] text-[#797979]">
                       <span>
-                        {collectionDetail?.carpet_count} {t("exhibit")}
+                        {category?.carpets_count} {t("exhibit")}
                       </span>
                     </div>
                   </div>
