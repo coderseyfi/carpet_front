@@ -119,8 +119,10 @@
   "accessibility": "Accessibility",
   "publications": "Publications",
   "publication": "publication",
+  "reports": "Reports",
+  "report": "report",
   "search": "Search",
-  "year": "Year"
-
-
+  "year": "Year",
+  "loading": "Loading...",
+  "noData": "No reports found"
 }

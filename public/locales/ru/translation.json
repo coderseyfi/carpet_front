@@ -120,8 +120,10 @@
   "accessibility": "Доступность",
   "publications": "Публикации",
   "publication": "публикация",
+  "reports": "Отчеты",
+  "report": "отчет",
   "search": "Поиск",
-  "year": "Год"
-
-
+  "year": "Год",
+  "loading": "Загрузка...",
+  "noData": "Отчеты не найдены"
 }

@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import FileIcon from "@/assets/icons/file.svg";
-import { Select } from "antd";
+import { Select, Pagination } from "antd";
 
 import "./public.scss";
 
@@ -16,14 +16,7 @@ export default function PublicationsPage() {
   const [perPage, setPerPage] = useState(10);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [language, setLanguage] = useState(null);
   const [year, setYear] = useState(null);
-
-  const languageOptions = [
-    { value: "az", label: "Azərbaycan" },
-    { value: "en", label: "English" },
-    { value: "ru", label: "Русский" },
-  ];
 
   const currentYear = new Date().getFullYear();
   const yearOptions = Array.from({ length: 15 }, (_, i) => {
@@ -55,8 +48,13 @@ export default function PublicationsPage() {
   };
 
   useEffect(() => {
-    getDocuments(1);
-  }, [lang, year]);
+    getDocuments(currentPage);
+  }, [currentPage, lang, year]);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -83,7 +81,10 @@ export default function PublicationsPage() {
                 placeholder={t("year")}
                 allowClear
                 value={year}
-                onChange={(value) => setYear(value)}
+                onChange={(value) => {
+                  setYear(value);
+                  setCurrentPage(1);
+                }}
                 options={yearOptions}
                 className="publications-filter-select"
                 suffixIcon={<span className="text-[10px]">▼</span>}
@@ -137,17 +138,22 @@ export default function PublicationsPage() {
               ))}
             </div>
 
-            {documents.length < total && (
-              <div className="flex justify-center px-0 pb-[90px] pt-[56px]">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    getDocuments(currentPage + 1);
-                  }}
-                  className="border border-[#111] px-[26px] py-[13px] font-roboto text-[15px] font-normal leading-none text-[#111]">
-                  Load more
-                </a>
+            {total > perPage && (
+              <div
+                className="news-pagination mb-[10px]"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: 40,
+                  paddingBottom: 90,
+                }}>
+                <Pagination
+                  current={currentPage}
+                  pageSize={perPage}
+                  total={total}
+                  onChange={handlePageChange}
+                  showSizeChanger={false}
+                />
               </div>
             )}
           </section>

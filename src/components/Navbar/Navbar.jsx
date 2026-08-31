@@ -183,6 +183,11 @@ const Navbar = () => {
           key: "10",
           path: "/publications",
         },
+        {
+          label: t("reports"),
+          key: "11",
+          path: "/reports",
+        },
       ],
     },
     {

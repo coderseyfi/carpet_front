@@ -119,6 +119,10 @@
   "accessibility": "Əlçatanlıq",
   "publications": "Nəşrlər",
   "publication": "Nəşr",
+  "reports": "Hesabatlar",
+  "report": "Hesabat",
   "search": "Axtarış",
-  "year": "İl"
+  "year": "İl",
+  "loading": "Yüklənir...",
+  "noData": "Hesabat tapılmadı"
 }

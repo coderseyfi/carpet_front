@@ -18,6 +18,7 @@ import ArtistDetail from "@/pages/Artists/Artists-detail";
 import ExhibitionDetail from "@/pages/ExhibitionDetail/exhibitiondetail";
 import AccessibilityPage from "@/pages/Accessibility/AccessibilityPage";
 import PublicationsPage from "@/pages/Publications/PublicationsPage";
+import ReportsPage from "@/pages/Reports/ReportsPage";
 import SearchPage from "@/pages/Search";
 
 const Root = () => {
@@ -58,6 +59,7 @@ const Root = () => {
             path={"/accessibility"}
             element={<AccessibilityPage />}></Route>
           <Route path={"/publications"} element={<PublicationsPage />}></Route>
+          <Route path={"/reports"} element={<ReportsPage />}></Route>
         </Route>
 
         {/* <Route path={`*`} element={<NotFound />} /> */}
