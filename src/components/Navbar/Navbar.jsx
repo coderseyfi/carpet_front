@@ -163,6 +163,11 @@ const Navbar = () => {
           key: "10",
           path: "/publications",
         },
+        {
+          label: t("latif.title"),
+          key: "12",
+          path: "/latif-karimov",
+        },
       ],
     },
     {
