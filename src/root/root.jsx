@@ -20,6 +20,7 @@ import AccessibilityPage from "@/pages/Accessibility/AccessibilityPage";
 import PublicationsPage from "@/pages/Publications/PublicationsPage";
 import ReportsPage from "@/pages/Reports/ReportsPage";
 import SearchPage from "@/pages/Search";
+import LatifKarimovPage from "@/pages/LatifKarim";
 
 const Root = () => {
   return (
@@ -54,6 +55,7 @@ const Root = () => {
           <Route element={<PrivateRoute />}></Route>
 
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/latif-karimov" element={<LatifKarimovPage />} />
 
           <Route
             path={"/accessibility"}
