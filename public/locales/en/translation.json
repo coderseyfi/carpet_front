@@ -59,6 +59,11 @@
     "copyright": "©2026 Azerbaijan National Carpet Museum"
   },
   "planVisit": {
+    "underConstruction": {
+      "title": "Page Under Construction",
+      "description": "We're currently working on the Plan Your Visit section. It will be available soon.",
+      "thanks": "Thank you for your patience."
+    },
     "pageTitle": "Plan Your Visit",
     "breadcrumb": "Home / Plan Your Visit",
 

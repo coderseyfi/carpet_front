@@ -60,6 +60,11 @@
     "copyright": "©2026 Azərbaycan Milli Xalça Muzeyi"
   },
   "planVisit": {
+    "underConstruction": {
+      "title": "Səhifə hazırlanır",
+      "description": "Plan your visit bölməsi üzərində işləyirik. Tezliklə istifadəyə veriləcək.",
+      "thanks": "Anlayışınız üçün təşəkkür edirik."
+    },
     "pageTitle": "Səfərinizi planlaşdırın",
     "breadcrumb": "Səfərinizi planlaşdırın",
 

@@ -6,7 +6,8 @@ import Exhibitions from "../pages/Exhibitions/exhibitions";
 import News from "../pages/News/news";
 import NewsDetail from "../pages/NewsDetail/newsDetail";
 import OurStory from "../pages/OurStory/OurStory";
-import PlanVisit from "../pages/PlanVisit";
+import UnderConstruction from "../pages/UnderConstruction";
+// Restore PlanVisit from "../pages/PlanVisit" when the section is ready.
 import Teams from "@/pages/Teams";
 import Collections from "@/pages/CarpetManagement/Collections/Collections";
 import CollectionDetail from "@/pages/CarpetManagement/Collections/collection-detail";
@@ -45,7 +46,7 @@ const Root = () => {
           <Route path={"/carpets/:id"} element={<Carpets />} />
           <Route path={"/carpet-detail/:id"} element={<CarpetDetail />} />
 
-          <Route path={"/plan-your-visit"} element={<PlanVisit />}></Route>
+          <Route path={"/plan-your-visit"} element={<UnderConstruction />}></Route>
           <Route path={"/teams"} element={<Teams />}></Route>
           <Route path={"/teams/:id"} element={<TeamDetail />}></Route>
 
