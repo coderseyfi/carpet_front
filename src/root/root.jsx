@@ -22,6 +22,7 @@ import PublicationsPage from "@/pages/Publications/PublicationsPage";
 import ReportsPage from "@/pages/Reports/ReportsPage";
 import SearchPage from "@/pages/Search";
 import LatifKarimovPage from "@/pages/LatifKarim";
+import PlanVisit from "@/pages/PlanVisit";
 
 const Root = () => {
   return (
@@ -46,7 +47,7 @@ const Root = () => {
           <Route path={"/carpets/:id"} element={<Carpets />} />
           <Route path={"/carpet-detail/:id"} element={<CarpetDetail />} />
 
-          <Route path={"/plan-your-visit"} element={<UnderConstruction />}></Route>
+          <Route path={"/plan-your-visit"} element={<PlanVisit />}></Route>
           <Route path={"/teams"} element={<Teams />}></Route>
           <Route path={"/teams/:id"} element={<TeamDetail />}></Route>
 
