@@ -423,11 +423,11 @@ export default function PlanVisit() {
                   <Price value={item.price} currency={currency} />
                 </PriceRow>
               ))}
-              <a
+              {/* <a
                 href={PHONE_HREF}
                 className="mt-auto self-start border border-[#141414] px-[22px] py-[11px] text-[15px] transition-colors hover:bg-[#141414] hover:text-white">
                 {t("planVisit.prices.bookGuide")}
-              </a>
+              </a> */}
             </div>
 
             {/* Other services */}
@@ -474,11 +474,11 @@ export default function PlanVisit() {
                   50 <span className="text-[15px]">{currency}</span>
                 </span>
               </div>
-              <a
+              {/* <a
                 href={PHONE_HREF}
                 className="self-start border border-[#FFF4DC] px-[22px] py-[11px] text-[15px] transition-colors hover:bg-[#FFF4DC] hover:text-[#7B2627]">
                 {t("planVisit.prices.register")}
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
