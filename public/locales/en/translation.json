@@ -65,33 +65,109 @@
       "thanks": "Thank you for your patience."
     },
     "pageTitle": "Plan Your Visit",
-    "breadcrumb": "Home / Plan Your Visit",
-
-    "bakuTitle": "Azerbaijan National Carpet Museum — Baku",
-    "shushaTitle": "Azerbaijan National Carpet Museum — Shusha",
-
-    "address": "28 Mikayil Huseynov Avenue, Baku, Azerbaijan",
-
-    "openNow": "Open now",
-    "viewOnMap": "View on map",
+    "breadcrumb": "Plan Your Visit",
+    "intro": "Opening hours, ticket prices, guided tours and visitors entitled to free admission.",
     "getTickets": "Get Tickets",
-
-    "workingHours": {
-      "sunday": "Sunday",
-      "monday": "Monday",
-      "tuesday": "Tuesday",
-      "wednesday": "Wednesday",
-      "thursday": "Thursday",
-      "friday": "Friday",
-      "saturday": "Saturday"
+    "viewOnMap": "View on map",
+    "nowLive": "Now live",
+    "allExhibitions": "All exhibitions",
+    "status": {
+      "today": "TODAY",
+      "exposition": "EXHIBITION",
+      "dayOff": "DAY OFF",
+      "openNow": "Open now",
+      "closedNow": "Closed now",
+      "closedToday": "Closed today",
+      "openUntil": "Open until {{time}}",
+      "opensToday": "Opens today at {{time}}",
+      "opensTomorrow": "Opens tomorrow at {{time}}",
+      "opensTuesday": "Opens Tuesday at {{time}}"
     },
-
-    "visitTitle": "Plan your visit",
-
-    "accessTitle": "Access",
-    "accessDescription": "We aim to provide a friendly, accessible environment for all our visitors and the widest possible access to our buildings, exhibitions and collections.",
-
-    "nowLive": "Now live"
+    "nav": {
+      "locations": "Locations",
+      "hours": "Opening hours",
+      "prices": "Prices",
+      "free": "Free admission"
+    },
+    "locations": {
+      "baku": {
+        "tag": "BAKU",
+        "title": "Azerbaijan National Carpet Museum — Baku",
+        "address": "28 Mikayil Huseynov Avenue, AZ1000, Baku"
+      },
+      "shusha": {
+        "tag": "SHUSHA",
+        "title": "Azerbaijan National Carpet Museum — Shusha",
+        "address": "Shusha branch of the Azerbaijan National Carpet Museum, 8 Noyabr St."
+      },
+      "address": "Address",
+      "contact": "Contact",
+      "hours": "Hours",
+      "seeSchedule": "See schedule"
+    },
+    "hours": {
+      "cashDesk": "TICKET OFFICE HOURS",
+      "exposition": "EXHIBITION HOURS",
+      "jewelry": "JEWELRY COLLECTION",
+      "tueFri": "Tuesday – Friday",
+      "satSun": "Saturday – Sunday",
+      "tueThu": "Tuesday, Thursday",
+      "sat": "Saturday",
+      "todayBadge": "TODAY",
+      "dayOff": "Day off",
+      "monday": "Monday",
+      "closed": "MUSEUM CLOSED"
+    },
+    "prices": {
+      "currency": "AZN",
+      "entry": "ADMISSION",
+      "single": "INDIVIDUAL",
+      "group": "GROUP*",
+      "locals": "Local citizens",
+      "foreigners": "Foreign citizens",
+      "students": "Pupils and students",
+      "jewelry": "Jewelry collection",
+      "groupNote": "* Group — more than 10 visitors",
+      "guide": "GUIDED TOURS",
+      "languages": [
+        "Azerbaijani",
+        "English",
+        "Russian"
+      ],
+      "guideService": "Guided tour",
+      "guideGroup": "Group tour (more than 10 visitors)",
+      "guideStudents": "Pupils and students",
+      "bookGuide": "Book a guide",
+      "other": "OTHER SERVICES",
+      "photo": "High-quality photo of a carpet (1 exhibit)",
+      "filming": "Video or photo shooting in the museum",
+      "filmingNote": "Subject to prior agreement with the museum management",
+      "perHour": "1 hour",
+      "workshop": "WORKSHOP",
+      "workshopTitle": "Carpet weaving workshop",
+      "workshopLessons": "8 lessons",
+      "register": "Register"
+    },
+    "free": {
+      "title": "Visitors entitled to free admission to the Azerbaijan National Carpet Museum",
+      "note": "(upon presentation of the relevant document)",
+      "list": [
+        "People with Group I and II disabilities / one person accompanying a wheelchair user",
+        "Local pensioners",
+        "Museum employees",
+        "Members of the International Council of Museums (ICOM)",
+        "Members of public associations (weavers, artists, designers)",
+        "Students and teachers of the Azerbaijan State Academy of Fine Arts",
+        "Students and teachers of the Azerbaijan State University of Culture and Arts",
+        "Students and teachers of the Azerbaijan Tourism and Management University",
+        "Students and teachers of arts-oriented vocational schools",
+        "Boarding school pupils",
+        "Children and teachers of preschool institutions",
+        "Labour and war veterans",
+        "Internally displaced persons",
+        "Soldiers"
+      ]
+    }
   },
   "ourStory": {
     "pageTitle": "Our Story",

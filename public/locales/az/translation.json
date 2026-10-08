@@ -67,32 +67,108 @@
     },
     "pageTitle": "Səfərinizi planlaşdırın",
     "breadcrumb": "Səfərinizi planlaşdırın",
-
-    "bakuTitle": "Azərbaycan Milli Xalça Muzeyi — Bakı",
-    "shushaTitle": "Azərbaycan Milli Xalça Muzeyi — Şuşa",
-
-    "address": "Mikayıl Hüseynov prospekti 28, Bakı, Azərbaycan",
-
-    "openNow": "Hazırda açıqdır",
-    "viewOnMap": "Xəritədə göstər",
+    "intro": "İş vaxtı, bilet qiymətləri, bələdçi xidməti və ödənişsiz giriş hüququ olan ziyarətçilər haqqında məlumat.",
     "getTickets": "Bilet al",
-
-    "workingHours": {
-      "sunday": "Bazar",
-      "monday": "Bazar ertəsi",
-      "tuesday": "Çərşənbə axşamı",
-      "wednesday": "Çərşənbə",
-      "thursday": "Cümə axşamı",
-      "friday": "Cümə",
-      "saturday": "Şənbə"
+    "viewOnMap": "Xəritədə göstər",
+    "nowLive": "Hazırda davam edir",
+    "allExhibitions": "Bütün sərgilər",
+    "status": {
+      "today": "BU GÜN",
+      "exposition": "EKSPOZİSİYA",
+      "dayOff": "İSTİRAHƏT GÜNÜ",
+      "openNow": "Hazırda açıqdır",
+      "closedNow": "Hazırda bağlıdır",
+      "closedToday": "Bu gün bağlıdır",
+      "openUntil": "{{time}}-dək açıqdır",
+      "opensToday": "Bu gün açılış: {{time}}",
+      "opensTomorrow": "Sabah açılış: {{time}}",
+      "opensTuesday": "Çərşənbə axşamı açılış: {{time}}"
     },
-
-    "visitTitle": "Səfərinizi planlaşdırın",
-
-    "accessTitle": "Əlçatanlıq",
-    "accessDescription": "Bütün ziyarətçilərimiz üçün rahat və əlçatan mühit yaratmağa, həmçinin binalarımıza, sərgilərimizə və kolleksiyalarımıza mümkün olan ən geniş çıxışı təmin etməyə çalışırıq.",
-
-    "nowLive": "Hazırda davam edir"
+    "nav": {
+      "locations": "Ünvanlar",
+      "hours": "İş vaxtı",
+      "prices": "Qiymətlər",
+      "free": "Ödənişsiz giriş"
+    },
+    "locations": {
+      "baku": {
+        "tag": "BAKI",
+        "title": "Azərbaycan Milli Xalça Muzeyi — Bakı",
+        "address": "Mikayıl Hüseynov prospekti 28, AZ1000, Bakı"
+      },
+      "shusha": {
+        "tag": "ŞUŞA",
+        "title": "Azərbaycan Milli Xalça Muzeyi — Şuşa",
+        "address": "Azərbaycan Milli Xalça Muzeyinin Şuşa filialı, 8 noyabr küç."
+      },
+      "address": "Ünvan",
+      "contact": "Əlaqə",
+      "hours": "İş vaxtı",
+      "seeSchedule": "Cədvələ bax"
+    },
+    "hours": {
+      "cashDesk": "MUZEY KASSASININ İŞ VAXTI",
+      "exposition": "EKSPOZİSİYANIN İŞ VAXTI",
+      "jewelry": "ZƏRGƏRLİK FONDU",
+      "tueFri": "Çərşənbə axşamı – Cümə",
+      "satSun": "Şənbə – Bazar",
+      "tueThu": "Çərşənbə axşamı, Cümə axşamı",
+      "sat": "Şənbə",
+      "todayBadge": "BU GÜN",
+      "dayOff": "İstirahət günü",
+      "monday": "Bazar ertəsi",
+      "closed": "MUZEY BAĞLIDIR"
+    },
+    "prices": {
+      "currency": "AZN",
+      "entry": "GİRİŞ BİLETİ",
+      "single": "FƏRDİ",
+      "group": "TUR PAKET*",
+      "locals": "Yerli vətəndaşlar üçün",
+      "foreigners": "Əcnəbi vətəndaşlar üçün",
+      "students": "Məktəbli və tələbələr üçün",
+      "jewelry": "Zərgərlik fondu",
+      "groupNote": "* Tur paket — 10 nəfərdən artıq tamaşaçı",
+      "guide": "BƏLƏDÇİ XİDMƏTİ",
+      "languages": [
+        "Azərbaycan",
+        "İngilis",
+        "Rus"
+      ],
+      "guideService": "Bələdçi xidməti",
+      "guideGroup": "Tur paket (10 nəfərdən artıq tamaşaçı)",
+      "guideStudents": "Məktəbli və tələbələr üçün",
+      "bookGuide": "Bələdçi sifariş et",
+      "other": "DİGƏR XİDMƏTLƏR",
+      "photo": "Xalçaların yüksək keyfiyyətdə fotosu (1 eksponat)",
+      "filming": "Muzeydə video və ya foto çəkiliş",
+      "filmingNote": "Muzey rəhbərliyi ilə öncədən razılaşdırmaq şərti ilə",
+      "perHour": "1 saat",
+      "workshop": "DƏRNƏK",
+      "workshopTitle": "Xalçatoxuma üzrə dərnək",
+      "workshopLessons": "8 dərs",
+      "register": "Qeydiyyat"
+    },
+    "free": {
+      "title": "Azərbaycan Milli Xalça Muzeyinə ödənişsiz daxil olan ziyarətçilərin siyahısı",
+      "note": "(müvafiq sənəd təqdim etmək şərtilə)",
+      "list": [
+        "I, II qrup əlillər / Əlil arabası ilə hərəkət edən qonağı müşayiət edən şəxs (1 nəfər)",
+        "Yerli təqaüdçülər",
+        "Muzey işçiləri",
+        "Beynəlxalq Muzeylər Şurasının (ICOM) üzvləri",
+        "İctimai birlik üzvləri (toxucular, rəssamlar, dizaynerlər)",
+        "Azərbaycan Dövlət Rəssamlıq Akademiyasının tələbə və müəllimləri",
+        "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin tələbə və müəllimləri",
+        "Azərbaycan Turizm və Menecment Universitetinin tələbə və müəllimləri",
+        "İncəsənət yönümlü orta ixtisas təhsil ocaqlarının tələbə və müəllimləri",
+        "İnternat məktəbinin şagirdləri",
+        "Məktəbəqədər təhsil müəssisələrinin uşaq və müəllimləri",
+        "Əmək və müharibə veteranları",
+        "Məcburi köçkünlər",
+        "Əsgərlər"
+      ]
+    }
   },
   "ourStory": {
     "pageTitle": "Hekayəmiz",
