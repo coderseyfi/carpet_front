@@ -34,8 +34,6 @@ export default function Hero() {
         <h4 className="mb-2 text-lg font-bold sm:text-[22px]">
           {t("hero.bookTitle")}
         </h4>
-
-        <p className="text-sm sm:text-base">{t("hero.bookDesc")}</p>
       </div>
     </div>
   );
