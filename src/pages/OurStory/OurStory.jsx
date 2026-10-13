@@ -28,6 +28,10 @@ export default function OurStory() {
 
   const mainNews = news?.[0];
 
+  // returnObjects gives back the key string until translations have loaded.
+  const history = t("ourStory.historyText", { returnObjects: true });
+  const historyText = Array.isArray(history) ? history : [];
+
   const datas = [
     {
       id: 1,
@@ -69,7 +73,9 @@ export default function OurStory() {
           <div className="our-story-content">
             <h4>{t("ourStory.historyTitle")}</h4>
 
-            <p>{t("ourStory.historyText")}</p>
+            {historyText.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
 
           <div className="video">

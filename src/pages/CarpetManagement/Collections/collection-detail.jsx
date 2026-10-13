@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import PageHeader from "../../../components/Cards/PageHeader";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axiosInstance, { IMAGE_URL } from "@/api";
-import CarpetDetailImg from "@/assets/images/collections/collection-detail.png";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
@@ -73,23 +72,13 @@ export default function CollectionDetail() {
       />
 
       <div className="bg-[#7D2829]">
-        <div className="flex justify-center">
-          <div className="text-white w-full py-[60px] max-w-[827px] pl-[110px] pr-[36px]">
-            <h1 className="text-[55px] font-normal mb-3">
-              {collectionDetail?.name}
-            </h1>
-            <p className="text-[18px] font-normal leading-[35px]">
-              {collectionDetail?.description}
-            </p>
-          </div>
-
-          <div className="w-full max-w-[1093px]">
-            <img
-              className="w-full h-full object-cover"
-              src={CarpetDetailImg}
-              alt="Collection Detail"
-            />
-          </div>
+        <div className="max-w-425 mx-auto px-5 py-[60px] text-white">
+          <h1 className="text-[55px] font-normal mb-3">
+            {collectionDetail?.name}
+          </h1>
+          <p className="text-[18px] font-normal leading-[35px]">
+            {collectionDetail?.description}
+          </p>
         </div>
       </div>
 

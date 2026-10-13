@@ -11,6 +11,11 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/context/LanguageContext";
 import EventCardOld from "@/components/Cards/EventCardOld";
 import parse from "html-react-parser";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 export default function ExhibitionDetail() {
   const { lang } = useLanguage();
@@ -28,6 +33,28 @@ export default function ExhibitionDetail() {
     getEventDetail();
   }, [id, lang]);
 
+  useEffect(() => {
+    Fancybox.bind('[data-fancybox="event-gallery"]', {
+      Thumbs: false,
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"],
+        },
+      },
+    });
+
+    return () => {
+      Fancybox.destroy();
+    };
+  }, [eventDetail]);
+
+  const coverImage =
+    eventDetail?.base_image || eventDetail?.images?.[0]?.image_path;
+  const images = eventDetail?.images || [];
+  const visibleSlides = Math.min(images.length || 1, 3);
+
   return (
     <div>
       <PageHeader
@@ -44,12 +71,11 @@ export default function ExhibitionDetail() {
           <p className="text-center mt-10 text-[32px] font-medium">{eventDetail?.title}</p>
           <div className="detail">
             <div className="text-center"></div>
-            <div className="img mb-10">
-              <img
-                src={IMAGE_URL + eventDetail?.images[0]?.image_path}
-                alt=""
-              />
-            </div>
+            {coverImage && (
+              <div className="img mb-10">
+                <img src={IMAGE_URL + coverImage} alt={eventDetail?.title} />
+              </div>
+            )}
 
             {/* <div>
               <p className="title">{eventDetail?.title}</p>
@@ -79,6 +105,42 @@ export default function ExhibitionDetail() {
           <div className="text-center">
             <p>{eventDetail?.text && parse(eventDetail.text)}</p>
           </div>
+
+          {images.length > 0 && (
+            <div style={{ margin: "35px 0" }}>
+              <Swiper
+                modules={[Autoplay]}
+                loop={images.length > visibleSlides}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                spaceBetween={16}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: Math.min(images.length, 2) },
+                  1024: { slidesPerView: visibleSlides },
+                }}>
+                {images.map((item, index) => (
+                  <SwiperSlide key={item.id || index}>
+                    <div className="w-full overflow-hidden">
+                      <a
+                        href={IMAGE_URL + item.image_path}
+                        data-fancybox="event-gallery"
+                        className="w-full block">
+                        <img
+                          className="w-full hover:scale-[1.03] cursor-pointer transition h-full object-cover aspect-[16/11]"
+                          src={IMAGE_URL + item.image_path}
+                          alt={`Image ${index + 1}`}
+                          loading="lazy"
+                        />
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          )}
           <div className="cards-container">
             {/* <p className="title">Now live</p> */}
             <div>

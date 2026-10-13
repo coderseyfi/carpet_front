@@ -140,7 +140,7 @@ export default function NewsDetail() {
                   640: { slidesPerView: Math.min(images.length || 1, 2) },
                   1024: { slidesPerView: visibleSlides },
                 }}>
-                {images.slice(1).map((item, index) => (
+                {images.map((item, index) => (
                   <SwiperSlide key={item.id || index}>
                     <div className="w-full overflow-hidden">
                       <a
