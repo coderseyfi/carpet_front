@@ -16,7 +16,10 @@ const EventCardOld = ({ event }) => {
           <div className="event-images  ">
             <img
               className="w-full aspect-16/14"
-              src={IMAGE_URL + event?.images[0]?.image_path}
+              src={
+                IMAGE_URL +
+                (event?.base_image || event?.images?.[0]?.image_path)
+              }
               alt=""
             />
           </div>

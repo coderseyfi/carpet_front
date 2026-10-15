@@ -52,7 +52,7 @@
     "baku": "Baku, Azerbaijan",
     "shusha": "Shusha, Azerbaijan",
 
-    "bakuAddress": "Baku, Mikayil Huseynov Avenue 28, AZ1000",
+    "bakuAddress": "Baku, Mikayil Useynov Avenue 28, AZ1000",
     "shushaAddress": "Shusha Branch of the Azerbaijan National Carpet Museum. Shusha city, 8 November Street.",
 
     "terms": "Terms and Conditions",
@@ -93,7 +93,7 @@
       "baku": {
         "tag": "BAKU",
         "title": "Azerbaijan National Carpet Museum — Baku",
-        "address": "28 Mikayil Huseynov Avenue, AZ1000, Baku"
+        "address": "28 Mikayil Useynov Avenue, AZ1000, Baku"
       },
       "shusha": {
         "tag": "SHUSHA",
@@ -174,7 +174,20 @@
     "breadcrumb": "Home / Our Story",
 
     "historyTitle": "History of the Museum",
-    "historyText": "Contrary to popular belief, Lorem Ipsum is not simply random text...",
+    "historyText": [
+      "Azerbaijan National Carpet Museum was established in accordance with the decree No. 130 of the Council of Ministers of the Azerbaijan SSR dated March 13, 1967. From 1967 to 1993, the museum was called the Azerbaijan State Museum of Carpet and Folk Applied Arts, from 1993 to 2014 – State Museum of Carpet and Applied Arts named after Latif Karimov, from 2014 to 2019 – Azerbaijan Carpet Museum, and from 2019 to the present – Azerbaijan National Carpet Museum.",
+      "At the time of establishing, it was the only museum that was dedicated to the art of carpet weaving. The main purpose of the museum’s creation was to store, research, and demonstrate unique examples of the carpet weaving art, which are Azerbaijan’s national heritage. The initiator of the museum was Latif Karimov, the outstanding scientist and carpet weaver, founder of the science of Azerbaijan Carpet Art, artist and teacher, author of the fundamental work Azerbaijani Carpet.",
+      "The first permanent exhibition was presented on April 26, 1972, in the building of the Juma Mosque, an architectural monument of the 19th century, located in Icherisheher (Old City). The national leader of Azerbaijan Heydar Aliyev, who provided great support to the museum from the first days of its establishment, took part at the opening ceremony. In 1970–1980s, with the constant help of the country’s leadership in the person of Heydar Aliyev, Museum had regular opportunities to purchase crafts and thereby replenish its collections. In those years, masterpieces of Azerbaijani Carpet Weaving Art were purchased for the museum.",
+      "In 1992, the State Museum of Carpet and Applied Arts was moved to the Museum Center (former Lenin Museum), located at the Neftchilar Avenue. In 1991, after the collapse of the Soviet Union, according to the presidential decree, the building was given to the Ministry of Culture of the Republic of Azerbaijan and renamed to Museum Center. The museum exhibition, representing the carpet samples from different regions of Azerbaijan, as well as works of other kinds of applied arts, was located in thirteen spacious rooms on the second floor.",
+      "In 2007, the President of the Republic of Azerbaijan Ilham Aliyev signed a decree for the creation of a new building for the museum in the territory of Seaside National Park within the framework of a joint project of the Ministry of Culture and Tourism of the Republic of Azerbaijan, the Heydar Aliyev Foundation, and UNESCO. In 2014, under the direction of Austrian architect Franz Janz, the museum building, which meets all modern requirements, was completed. Over the years, the museum is continuously developed and has become one of the main storage of samples of the Azerbaijan national culture.",
+      "Throughout its fifty years, the museum was led by several directors. From 1967 to 1982, it was led by Aziz Aliyev, Honored Art Worker; from 1982 to January 5, 2016 – by Professor Roya Tagiyeva, Honored Cultural Worker, Doctor in Arts. Since March 2, 2016, the museum has been headed by Dr. Shirin Melikova, Honored Cultural Worker.",
+      "The museum has become a research, training, cultural and educational center where many events, such as exhibitions, international symposiums, and conferences, are held. During its fifty years of existence, the museum has organized more than thirty exhibitions in different countries throughout the world. In 1983, on the initiative of Heydar Aliyev and the organizational support of UNESCO, the international symposium Art of Oriental Carpets was held in the Azerbaijan National Carpet Museum. Later, international symposiums such as Azerbaijan Carpet Weaving Art (1988), Azerbaijan Carpet and Applied Arts (2003) and Traditions and Innovations (2017) were held within the participation of the Azerbaijan National Carpet Museum. Additionally, in 2007, a symposium dedicated to Latif Karimov’s centenary was held at UNESCO headquarters in Paris.",
+      "The museum cooperates closely with influential international organizations, such as the European Textile Network (ETN), the European Museum Forum (EMF), the International Council of Museums (ICOM), UNESCO, and the Council for Humanitarian Cooperation of the Member States of the CIS (IFESCO).",
+      "In 2004, a law On the Preservation and Development of Azerbaijani Carpet was prepared and adopted within the museum’s participation. This law was aimed to implement the registration of Azerbaijani carpets, protect and support their development, and coordinate scientific and methodical training.",
+      "In 2010, the Traditional Azerbaijan Carpet Weaving Art was included within the UNESCO Representative List of the Intangible Cultural Heritage of Humanity on the initiative of Mehriban Aliyeva, First Vice-President of Azerbaijan, President of Heydar Aliyev Foundation, member of Milli Majlis (National Parliament of the Republic of Azerbaijan), and Goodwill Ambassador of UNESCO and ISESCO.",
+      "Azerbaijan Carpet Museum in accordance with the decree of the Cabinet of Ministers of the Republic of Azerbaijan dated July 15, 2019, received the National status for its significant contribution in popularization and promotion of the Azerbaijani Carpet Weaving Art.",
+      "Today, Azerbaijan Carpet Museum, which is located in one of the country’s most modern buildings, not only stores a rich collection of artifacts and carpets (our nation’s most valuable heritage), but also operates as the site for the comprehensive research of traditional carpet weaving art and its popularization within the world culture."
+    ],
 
     "missionTitle": "Our Mission",
     "missionText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",

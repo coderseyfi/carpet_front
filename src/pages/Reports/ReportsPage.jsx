@@ -113,7 +113,7 @@ export default function ReportsPage() {
                       doc?.file || doc?.link ? "noopener noreferrer" : undefined
                     }
                     className="flex items-stretch gap-[20px] border-t border-[#E2DED6] py-[20px]">
-                    {doc?.file || doc?.cover_image ? (
+                    {doc?.cover_image ? (
                       <div className="h-[128px] w-[96px] flex-none overflow-hidden">
                         <img
                           src={doc.cover_image}
