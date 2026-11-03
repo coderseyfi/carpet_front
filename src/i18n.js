@@ -8,7 +8,8 @@ i18n
   .use(LanguageDetector) 
   .use(initReactI18next) 
   .init({
-    fallbackLng: "az", 
+    fallbackLng: "az",
+    supportedLngs: ["az", "en", "ru"],
     // debug: true, // Konsolda debug mesajları görmək üçün
     interpolation: {
       escapeValue: false, 
@@ -16,6 +17,7 @@ i18n
   detection: {
   order: ["localStorage", "cookie", "navigator"],
   caches: ["localStorage"],
+  convertDetectedLanguage: (lng) => lng.split("-")[0],
 },
     backend: {
       loadPath: "/locales/{{lng}}/translation.json", 

@@ -53,7 +53,6 @@ export default function ExhibitionDetail() {
   const coverImage =
     eventDetail?.base_image || eventDetail?.images?.[0]?.image_path;
   const images = eventDetail?.images || [];
-  const visibleSlides = Math.min(images.length || 1, 3);
 
   return (
     <div>
@@ -70,7 +69,6 @@ export default function ExhibitionDetail() {
         <div className="main container">
           <p className="text-center mt-10 text-[32px] font-medium">{eventDetail?.title}</p>
           <div className="detail">
-            <div className="text-center"></div>
             {coverImage && (
               <div className="img mb-10">
                 <img src={IMAGE_URL + coverImage} alt={eventDetail?.title} />
@@ -102,7 +100,7 @@ export default function ExhibitionDetail() {
             </div> */}
           </div>
 
-          <div className="text-center">
+          <div className="detail-text max-w-[900px] mx-auto">
             <p>{eventDetail?.text && parse(eventDetail.text)}</p>
           </div>
 
@@ -110,7 +108,8 @@ export default function ExhibitionDetail() {
             <div style={{ margin: "35px 0" }}>
               <Swiper
                 modules={[Autoplay]}
-                loop={images.length > visibleSlides}
+                loop={images.length > 3}
+                centerInsufficientSlides
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,
@@ -118,8 +117,8 @@ export default function ExhibitionDetail() {
                 spaceBetween={16}
                 slidesPerView={1}
                 breakpoints={{
-                  640: { slidesPerView: Math.min(images.length, 2) },
-                  1024: { slidesPerView: visibleSlides },
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
                 }}>
                 {images.map((item, index) => (
                   <SwiperSlide key={item.id || index}>
@@ -142,7 +141,7 @@ export default function ExhibitionDetail() {
             </div>
           )}
           <div className="cards-container">
-            {/* <p className="title">Now live</p> */}
+            <p className="text-center mb-8 text-[32px] font-medium">{t("events.title")}</p>
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {events?.slice(0, 3).map((card) => (

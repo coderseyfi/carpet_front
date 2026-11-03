@@ -60,8 +60,6 @@ export default function NewsDetail() {
 
   const images = newsDetail?.images || [];
 
-  const visibleSlides = Math.min(images.length || 1, 3);
-
   const videoUrl = newsDetail?.link;
 
   const getYoutubeEmbedUrl = (url) => {
@@ -129,7 +127,8 @@ export default function NewsDetail() {
             <div style={{ margin: "35px 0" }}>
               <Swiper
                 modules={[Autoplay]}
-                loop={images.length > visibleSlides}
+                loop={images.length > 3}
+                centerInsufficientSlides
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,
@@ -137,8 +136,8 @@ export default function NewsDetail() {
                 spaceBetween={16}
                 slidesPerView={1}
                 breakpoints={{
-                  640: { slidesPerView: Math.min(images.length || 1, 2) },
-                  1024: { slidesPerView: visibleSlides },
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
                 }}>
                 {images.map((item, index) => (
                   <SwiperSlide key={item.id || index}>

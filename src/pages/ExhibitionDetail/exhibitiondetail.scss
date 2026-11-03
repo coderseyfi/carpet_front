@@ -53,6 +53,11 @@
       }
     }
   }
+  // Admin paneldən gələn inline text-align-ı da əvəz edir
+  .detail-text,
+  .detail-text * {
+    text-align: justify !important;
+  }
   .cards-container {
     margin: 80px 0 160px 0;
     .card {
