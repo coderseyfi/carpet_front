@@ -2,6 +2,7 @@ import React from "react";
 import LatifBg from "@/assets/images/latif/latif.png";
 import arrowLeft from "@/assets/images/arrow-left.svg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const LatifKarimov = () => {
   const { t } = useTranslation();
@@ -14,10 +15,12 @@ const LatifKarimov = () => {
 
           <p className="text-black mb-[31px] leading-[140%] text-[24px]">{t("latif.description")}</p>
 
-          <button className="text-black font-medium flex items-center underline">
+          <Link
+            to="/latif-karimov"
+            className="text-black! font-medium flex items-center underline w-fit">
             <span>{t("latif.readMore")}</span>
             <img src={arrowLeft} alt="" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

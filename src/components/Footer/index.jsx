@@ -51,17 +51,17 @@ const Footer = () => {
                 <p>{t("footer.collections")}</p>
               </Link>
 
-              <Link to="/exhibitions">
-                <p>{t("footer.exhibitions")}</p>
+              <Link to="/news">
+                <p>{t("footer.news")}</p>
               </Link>
 
-              <p>
+              <Link to="/publications">
                 <p>{t("footer.research")}</p>
-              </p>
+              </Link>
 
-              <p>
+              <Link to="/plan-your-visit#locations">
                 <p>{t("footer.contact")}</p>
-              </p>
+              </Link>
             </div>
 
             {/* Social */}
@@ -104,7 +104,7 @@ const Footer = () => {
 
               <a
                 className="icon"
-                href="https://www.linkedin.com/company/azerbaijan-carpet-museum/about/"
+                href="https://www.linkedin.com/in/azerbaijan-national-carpet-museum-a8514244b"
                 target="_blank"
                 rel="noopener noreferrer">
                 <img src={Linkedin} alt="LinkedIn" />

@@ -1,6 +1,7 @@
 import PageHeader from "@/components/Cards/PageHeader";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import LatifPortrait from "@/assets/images/latif/latif.png";
 
 export default function LatifKarimovPage() {
   const { t } = useTranslation();
@@ -53,10 +54,12 @@ export default function LatifKarimovPage() {
             </div>
           </div>
         </div>
-        <div className="flex min-h-[520px] items-center justify-center bg-[repeating-linear-gradient(135deg,#E6E1D7_0_14px,#EFEBE3_14px_28px)]">
-          <span className="border border-[#E2DED6] bg-[#FCF3E1] px-[14px] py-[9px] font-mono text-xs font-normal leading-none text-[#7E776C]">
-            portret — Lətif Kərimov, arxiv fotosu
-          </span>
+        <div className="min-h-[520px] overflow-hidden">
+          <img
+            src={LatifPortrait}
+            alt="Lətif Kərimov"
+            className="h-full min-h-[520px] w-full object-cover object-[80%_center]"
+          />
         </div>
       </section>
 
