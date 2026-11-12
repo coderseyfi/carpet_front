@@ -20,7 +20,8 @@ i18n
   convertDetectedLanguage: (lng) => lng.split("-")[0],
 },
     backend: {
-      loadPath: "/locales/{{lng}}/translation.json", 
+      loadPath: "/locales/{{lng}}/translation.json",
+      queryStringParams: { v: __APP_VERSION__ },
     },
   });
 

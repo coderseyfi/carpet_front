@@ -6,6 +6,10 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  define: {
+    // Hər build-də dəyişir — tərcümə fayllarının köhnə keşdən gəlməməsi üçün
+    __APP_VERSION__: JSON.stringify(Date.now().toString()),
+  },
   server: {
     watch: {
       usePolling: true,
