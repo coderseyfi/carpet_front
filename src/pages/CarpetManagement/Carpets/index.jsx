@@ -6,11 +6,13 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Link, useParams } from "react-router-dom";
 import { Pagination } from "antd";
+import useCollectionName from "@/hooks/useCollectionName";
 
 const Carpets = () => {
   const { lang } = useLanguage();
   const location = useLocation();
   const { collectionId } = location.state || {};
+  const collectionName = useCollectionName(collectionId);
 
   const { t } = useTranslation();
   const { id } = useParams();
@@ -46,17 +48,18 @@ const Carpets = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <PageHeader
-        title={t("carpets")}
+        title={t("exhibits")}
         breadcrumbs={[
           { label: t("navbar.collections"), path: "/collections" },
-          // {
-          //   label: t("categories"),
-          //   path: collectionId ? `/collections/${collectionId}` : undefined,
-          // },
-          {
-            label: t("carpets"),
-            path: collectionId ? `/collections/${collectionId}` : undefined,
-          },
+          ...(collectionId && collectionName
+            ? [
+                {
+                  label: collectionName,
+                  path: `/collections/${collectionId}`,
+                },
+              ]
+            : []),
+          { label: t("exhibits") },
         ]}
       />
 

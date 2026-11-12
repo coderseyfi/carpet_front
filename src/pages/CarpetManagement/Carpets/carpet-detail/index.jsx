@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useParams } from "react-router-dom";
+import useCollectionName from "@/hooks/useCollectionName";
 
 const CarpetDetail = () => {
   const { t } = useTranslation();
@@ -14,6 +15,7 @@ const CarpetDetail = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const location = useLocation();
   const { collectionId, subcategoryId } = location.state || {};
+  const collectionName = useCollectionName(collectionId);
 
   const getCarpet = async () => {
     const { data } = await axiosInstance.get(`/carpets/${id}`);
@@ -39,12 +41,16 @@ const CarpetDetail = () => {
         title={carpet?.name}
         breadcrumbs={[
           { label: t("navbar.collections"), path: "/collections" },
-          // {
-          //   label: t("categories"),
-          //   path: collectionId ? `/collections/${collectionId}` : undefined,
-          // },
+          ...(collectionId && collectionName
+            ? [
+                {
+                  label: collectionName,
+                  path: `/collections/${collectionId}`,
+                },
+              ]
+            : []),
           {
-            label: t("carpets"),
+            label: t("exhibits"),
             path: subcategoryId ? `/carpets/${subcategoryId}` : undefined,
             state: { collectionId },
           },
