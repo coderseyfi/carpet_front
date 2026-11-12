@@ -223,5 +223,8 @@
   "search": "Axtarış",
   "year": "İl",
   "loading": "Yüklənir...",
-  "noData": "Hesabat tapılmadı"
+  "noData": "Hesabat tapılmadı",
+  "searchResults": "Axtarış üzrə {{count}} nəticə tapıldı",
+  "noResultsFound": "Heç bir nəticə tapılmadı",
+  "more": "Ətraflı"
 }

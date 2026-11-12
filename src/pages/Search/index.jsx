@@ -144,7 +144,7 @@ export default function SearchPage() {
               size="large"
               className="search-submit-btn"
               onClick={handleSearchSubmit}>
-              {t("search") || "Search"}
+              {t("search")}
             </Button>
           </div>
         </section>
@@ -152,9 +152,7 @@ export default function SearchPage() {
         <section className="pt-[36px] pb-[80px]">
           {total > 0 && (
             <Text strong className="search-results-count">
-              {`${t("onSearch") || "On search"} ${total} ${
-                t("resultsFound") || "results found"
-              }`}
+              {t("searchResults", { count: total })}
             </Text>
           )}
 
@@ -162,7 +160,7 @@ export default function SearchPage() {
             {!loading && results.length === 0 ? (
               <Empty
                 className="py-[60px]"
-                description={t("noResultsFound") || "No results found"}
+                description={t("noResultsFound")}
               />
             ) : (
               <div className="search-result-list">
@@ -201,7 +199,7 @@ export default function SearchPage() {
                           )}
 
                           <span className="search-result-more font-roboto">
-                            {t("more") || "More"} →
+                            {t("more")} →
                           </span>
                         </div>
                       </div>

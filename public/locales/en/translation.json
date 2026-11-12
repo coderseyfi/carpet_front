@@ -220,5 +220,8 @@
   "search": "Search",
   "year": "Year",
   "loading": "Loading...",
-  "noData": "No reports found"
+  "noData": "No reports found",
+  "searchResults": "{{count}} results found",
+  "noResultsFound": "No results found",
+  "more": "Read more"
 }
