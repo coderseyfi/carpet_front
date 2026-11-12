@@ -2,6 +2,8 @@ import PageHeader from '@/components/Cards/PageHeader'
 import { useTranslation } from 'react-i18next'
 import Gorme from '@/assets/images/accessibility/gorme.jpeg'
 import Move from '@/assets/images/accessibility/move.png'
+import Esitme from '@/assets/images/accessibility/esitme.jpg'
+import Banner from '@/assets/images/accessibility/banner.jpg'
 
 export default function AccessibilityPage() {
   const { t } = useTranslation()
@@ -14,15 +16,12 @@ export default function AccessibilityPage() {
       />
 
       {/* Hero image */}
-      <div
-        className="flex h-[220px] w-full items-center justify-center sm:h-[280px] md:h-[360px]"
-        style={{
-          background:
-            'repeating-linear-gradient(135deg,#EDE9E1 0 14px,#F6F3ED 14px 28px)',
-        }}>
-        <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] text-[#8A8378] sm:px-3.5 sm:py-2.5 sm:text-xs">
-          wide photo — visitor in wheelchair in the permanent exposition
-        </span>
+      <div className="h-[220px] w-full overflow-hidden sm:h-[280px] md:h-[360px]">
+        <img
+          className="h-full w-full object-cover"
+          src={Banner}
+          alt="Azərbaycan Milli Xalça Muzeyi"
+        />
       </div>
 
       <div className="max-w-[1740px] mx-auto px-5">
@@ -67,8 +66,8 @@ export default function AccessibilityPage() {
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
+          {/* Row 2 — Hərəkət məhdudiyyəti: müvəqqəti gizlədilib, lazım olanda comment-dən çıxarın */}
+          {/* <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
             <div className="order-2 md:order-1">
               <div className="mb-4 h-0.5 w-10 bg-[#8E2B2B] sm:mb-[18px]" />
               <h3 className="mb-3.5 font-serif text-[22px] font-medium leading-[1.25] text-[#111] sm:mb-4 sm:text-2xl md:text-[27px]">
@@ -97,21 +96,18 @@ export default function AccessibilityPage() {
                 photo — step-free entrance / lift
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Row 3 */}
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14">
-            <div
-              className="order-1 flex h-[240px] items-center justify-center sm:h-[300px] md:h-[340px]"
-              style={{
-                background:
-                  'repeating-linear-gradient(135deg,#EDE9E1 0 14px,#F6F3ED 14px 28px)',
-              }}>
-              <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] text-[#8A8378]">
-                photo — tour with sign-language interpreter
-              </span>
+            <div className="order-1 flex items-center justify-center md:order-2">
+              <img
+                className="h-full w-full object-cover"
+                src={Esitme}
+                alt="Surdotərcümə ilə ekskursiya"
+              />
             </div>
-            <div className="order-2">
+            <div className="order-2 md:order-1">
               <div className="mb-4 h-0.5 w-10 bg-[#8E2B2B] sm:mb-[18px]" />
               <h3 className="mb-3.5 font-serif text-[22px] font-medium leading-[1.25] text-[#111] sm:mb-4 sm:text-2xl md:text-[27px]">
                 Eşitmə qabiliyyətini itirmiş və zəif olan ziyarətçilər üçün
@@ -140,7 +136,7 @@ export default function AccessibilityPage() {
 
           {/* Row 4 */}
           <div className="grid grid-cols-1 items-center gap-8 pb-12 md:grid-cols-2 md:gap-14 md:pb-16">
-            <div className="order-2 md:order-1">
+            <div className="order-2 md:order-2">
               <div className="mb-4 h-0.5 w-10 bg-[#8E2B2B] sm:mb-[18px]" />
               <h3 className="mb-3.5 font-serif text-[22px] font-medium leading-[1.25] text-[#111] sm:mb-4 sm:text-2xl md:text-[27px]">
                 Görmə qabiliyyətini itirmiş və zəif olan ziyarətçilər üçün
