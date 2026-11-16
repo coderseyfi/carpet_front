@@ -992,25 +992,6 @@ export default function LatifKarimovPage() {
           </div>
         </div>
       </section>
-
-      <section className="px-10 pb-[90px] pt-[72px]">
-        <div className="mx-auto grid max-w-[1080px] grid-cols-[1.4fr_1fr] items-center gap-12 bg-[#F5F2EC] px-12 py-11">
-          <div>
-            <h3 className="m-0 mb-3 font-serif text-[26px] font-medium leading-[1.25] text-[#111]">
-              Kərimovun kolleksiyası
-            </h3>
-            <p className="m-0 max-w-[620px] text-pretty font-sans text-[15px] font-normal leading-[1.7] text-[#333]">
-              Onun eskizləri üzrə toxunmuş xalçalar və elmi arxivi muzeyin daimi
-              ekspozisiyasında nümayiş olunur.
-            </p>
-          </div>
-          <a
-            href="#"
-            className="flex items-center gap-2.5 justify-self-start border-b border-[#8E2B2B] pb-2 font-sans text-[15px] font-medium leading-none text-[#8E2B2B]">
-            Kolleksiyaya bax<span>→</span>
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
