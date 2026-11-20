@@ -2,6 +2,30 @@ import PageHeader from "@/components/Cards/PageHeader";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import LatifPortrait from "@/assets/images/latif/latif.png";
+import YoungArtistImg from "@/assets/images/latif/young-artist.jpg";
+import OrnamentDrawingImg from "@/assets/images/latif/ornament-drawing.jpg";
+import PortraitCarpetImg from "@/assets/images/latif/portrait-carpet.jpg";
+import AtLoomImg from "@/assets/images/latif/at-loom.jpg";
+import ExhibitionImg from "@/assets/images/latif/exhibition.jpg";
+import ExaminingCarpetImg from "@/assets/images/latif/examining-carpet.jpg";
+import WithYouthImg from "@/assets/images/latif/with-youth.jpg";
+import WorkshopStudentsImg from "@/assets/images/latif/workshop-students.jpg";
+import Department1952Img from "@/assets/images/latif/department-1952.jpg";
+import MuseumEarlyYearsImg from "@/assets/images/latif/museum-early-years.jpg";
+import HeydarAliyevVisitImg from "@/assets/images/latif/heydar-aliyev-visit.jpg";
+
+function Photo({ src, alt, className = "", imgClassName = "" }) {
+  return (
+    <figure className={`m-0 overflow-hidden bg-[#F5F2EC] ${className}`}>
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className={`block h-full w-full object-cover grayscale-[15%] ${imgClassName}`}
+      />
+    </figure>
+  );
+}
 
 export default function LatifKarimovPage() {
   const { t } = useTranslation();
@@ -114,6 +138,8 @@ export default function LatifKarimovPage() {
             Lətif Kərimov – rəssam
           </h2>
 
+          <div className="grid grid-cols-[1.3fr_1fr] items-center gap-14">
+          <div>
           <h3 className="m-0 mb-4 font-serif text-[26px] font-medium leading-[1.3] text-[#111]">
             Rəssam və ənənə
           </h3>
@@ -138,6 +164,13 @@ export default function LatifKarimovPage() {
               dərindən öyrənilməsinin fərdi bədii yozumla birləşdirilməsi onun
               yaradıcılığının səciyyəvi xüsusiyyətlərindən birinə çevrilmişdir.
             </p>
+          </div>
+          </div>
+          <Photo
+            src={YoungArtistImg}
+            alt="Gənc Lətif Kərimov miniatür üzərində işləyərkən"
+            className="h-[520px]"
+          />
           </div>
         </div>
       </section>
@@ -175,11 +208,12 @@ export default function LatifKarimovPage() {
               </p>
             </div>
           </div>
-          <div className="flex h-[420px] items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-            <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-              foto — ornament eskizi / xalça fraqmenti
-            </span>
-          </div>
+          <Photo
+            src={OrnamentDrawingImg}
+            alt="Lətif Kərimov ornament eskizləri üzərində işləyərkən"
+            className="h-[560px]"
+            imgClassName="object-top"
+          />
         </div>
       </section>
 
@@ -233,11 +267,12 @@ export default function LatifKarimovPage() {
 
           <div className="mt-10 grid grid-cols-2 gap-7">
             <div className="flex flex-col">
-              <div className="mb-[14px] flex h-80 items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-                <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-                  xalça — “Firdovsi”, 1937
-                </span>
-              </div>
+              <Photo
+                src={PortraitCarpetImg}
+                alt="Lətif Kərimov Hüseyn Cavidin portret xalçası önündə"
+                className="mb-[14px] h-[440px]"
+                imgClassName="object-top"
+              />
               <p className="m-0 text-pretty font-sans text-[15px] font-normal leading-[1.7] text-[#333]">
                 Onun ən məşhur əsərlərindən biri 1937-ci ildə Parisdə keçirilən
                 Ümumdünya sərgisində nümayiş etdirilən “Firdovsi” xalçası
@@ -245,11 +280,12 @@ export default function LatifKarimovPage() {
               </p>
             </div>
             <div className="flex flex-col">
-              <div className="mb-[14px] flex h-80 items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-                <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-                  xalça — Nizami silsiləsi, 1940
-                </span>
-              </div>
+              <Photo
+                src={AtLoomImg}
+                alt="Lətif Kərimov dəzgah arxasında xalça toxuyarkən"
+                className="mb-[14px] h-[440px]"
+                imgClassName="object-top"
+              />
               <p className="m-0 text-pretty font-sans text-[15px] font-normal leading-[1.7] text-[#333]">
                 Sonrakı illərdə rəssam görkəmli şairlərə, yazıçılara, alimlərə,
                 bəstəkarlara, kosmonavtlara, eləcə də digər tarixi şəxsiyyətlərə
@@ -336,6 +372,12 @@ export default function LatifKarimovPage() {
               </p>
             </div>
           </div>
+          <Photo
+            src={ExhibitionImg}
+            alt="Lətif Kərimov sərgidə həmkarları ilə"
+            className="mt-8 h-[520px]"
+            imgClassName="object-[center_30%]"
+          />
           <p className="mx-0 mb-0 mt-7 max-w-[760px] text-pretty font-sans text-base font-normal leading-[1.75] text-[#2B2B2B]">
             L.Kərimovun sərgi fəaliyyəti onun yaradıcılığının nə qədər
             genişmiqyaslı olduğunu göstərir. Rəssamın yaradıcılığı dekorativ
@@ -460,11 +502,12 @@ export default function LatifKarimovPage() {
 
       <section className="px-10 pt-16">
         <div className="mx-auto grid max-w-[1080px] grid-cols-2 items-center gap-14">
-          <div className="flex h-[400px] items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-            <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-              foto — xalça məktəblərinin xəritəsi / cədvəl
-            </span>
-          </div>
+          <Photo
+            src={ExaminingCarpetImg}
+            alt="Lətif Kərimov xalçanı tədqiq edərkən"
+            className="h-[560px]"
+            imgClassName="object-top"
+          />
           <div>
             <h3 className="m-0 mb-4 font-serif text-[26px] font-medium leading-[1.3] text-[#111]">
               Xalçanın elmi dili
@@ -672,6 +715,12 @@ export default function LatifKarimovPage() {
                 etmişdir.
               </p>
             </div>
+            <Photo
+              src={WithYouthImg}
+              alt="Lətif Kərimov gənclərlə"
+              className="mt-8 h-[440px]"
+              imgClassName="object-[center_35%]"
+            />
           </div>
         </div>
       </section>
@@ -716,6 +765,11 @@ export default function LatifKarimovPage() {
               Cəfər Müciri, sənətşünaslıq namizədi
             </div>
           </div>
+          <Photo
+            src={WorkshopStudentsImg}
+            alt="Lətif Kərimov tələbələri ilə xalça eskizi üzərində"
+            className="mt-10 h-[560px]"
+          />
         </div>
       </section>
 
@@ -760,6 +814,11 @@ export default function LatifKarimovPage() {
               məktəbin elmi əsasına çevrilmişdir.
             </p>
           </div>
+          <Photo
+            src={Department1952Img}
+            alt="Lətif Kərimov şöbə əməkdaşları ilə"
+            className="mt-10 h-[600px]"
+          />
         </div>
       </section>
 
@@ -890,11 +949,11 @@ export default function LatifKarimovPage() {
               </p>
             </div>
           </div>
-          <div className="flex h-[460px] items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-            <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-              foto — muzeyin ilk illəri, arxiv
-            </span>
-          </div>
+          <Photo
+            src={MuseumEarlyYearsImg}
+            alt="Lətif Kərimov muzey əməkdaşları ilə xalçanı nəzərdən keçirərkən"
+            className="h-[640px]"
+          />
         </div>
       </section>
 
@@ -918,11 +977,11 @@ export default function LatifKarimovPage() {
 
       <section className="px-10 pt-16">
         <div className="mx-auto grid max-w-[1080px] grid-cols-2 items-center gap-14">
-          <div className="flex h-[420px] items-center justify-center bg-[repeating-linear-gradient(135deg,#EDE9E1_0_14px,#F6F3ED_14px_28px)]">
-            <span className="border border-[#E2DED6] bg-white px-3 py-2 font-mono text-[11px] font-normal leading-none text-[#8A8378]">
-              foto — Cümə məscidi, ilk ekspozisiya, 1972
-            </span>
-          </div>
+          <Photo
+            src={HeydarAliyevVisitImg}
+            alt="Ümummilli Lider Heydər Əliyev və Lətif Kərimov muzeydə"
+            className="h-[420px]"
+          />
           <div>
             <h3 className="m-0 mb-4 font-serif text-[26px] font-medium leading-[1.3] text-[#111]">
               İlk ekspozisiya
