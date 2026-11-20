@@ -3,7 +3,7 @@ import PageHeader from "@/components/Cards/PageHeader";
 import { useLanguage } from "@/context/LanguageContext";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import FileIcon from "@/assets/icons/file.svg";
+import DocCover from "@/components/Cards/DocCover";
 import { Select, Pagination } from "antd";
 
 import "./public.scss";
@@ -109,19 +109,11 @@ export default function PublicationsPage() {
                     doc?.file || doc?.link ? "noopener noreferrer" : undefined
                   }
                   className="flex items-stretch gap-[20px] border-t border-[#E2DED6] py-[20px]">
-                  {doc?.file || doc?.cover_image ? (
-                    <div className="h-[128px] w-[96px] flex-none overflow-hidden">
-                      <img
-                        src={doc.cover_image}
-                        alt={doc.title}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex h-[128px] w-[96px] flex-none items-center justify-center bg-[#FCF3E1]">
-                      <img src={FileIcon} alt="file" />
-                    </div>
-                  )}
+                  <DocCover
+                    cover={doc?.cover_image}
+                    title={doc?.title}
+                    file={doc?.file}
+                  />
 
                   <div className="flex flex-col justify-center">
                     {doc.created_at && (
